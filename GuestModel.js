@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import validator from 'validator';
 
 const GuestSchema = new mongoose.Schema({
     name: {
@@ -12,3 +11,5 @@ const GuestSchema = new mongoose.Schema({
         type: String
     }
 });
+
+export default mongoose.model('Guest', GuestSchema);
