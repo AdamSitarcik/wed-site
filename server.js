@@ -1,5 +1,6 @@
 import express from 'express';
 const app = express();
+app.use(express.json());
 import dotenv from 'dotenv';
 dotenv.config();
 import bodyParser from 'body-parser';
@@ -9,7 +10,6 @@ import guestRouter from './Routes.js';
 
 app.use('/api', guestRouter);
 
-app.use(express.json());
 app.use(bodyParser.json());
 
 const port = process.env.PORT || 5000;
