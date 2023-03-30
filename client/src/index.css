@@ -1,13 +1,202 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=IM+Fell+English&family=IM+Fell+English+SC&display=swap');
+
+/* font-family: 'Allura', cursive;
+font-family: 'IM Fell English', serif;
+font-family: 'IM Fell English SC', serif; */
+
+:root {
+  --background-color-info: #fafdf344;
+  --background-color-light: #fafdf398;
+  --background-color-dark: #F5F5DC98;
+  --navbar-height: 10vh;
+  --section-height: 75vh;
+  --allura: 'Allura', cursive;
+  --im-fell-english: 'IM Fell English', serif;
+  --im-fell-english-sc: 'IM Fell English SC', serif;
+  --bckg-img-max-width: 650px;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: var(--im-fell-english);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url('./DA_drawing_color_v2.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 85vw;
 }
+
+.landing-section h1 {
+  font-size: 10vw;
+}
+
+.landing-section h2 {
+  font-size: 6vw;
+}
+
+@media(min-width: calc(650px + 15vw)) {
+
+  body {
+    background-size: 650px;
+  }
+
+  .landing-section h1 {
+    font-size: 10vh;
+  }
+
+  .landing-section h2 {
+    font-size: 5vh;
+  }
+
+}
+
+.landing-section h1,
+h2 {
+  font-family: var(--allura)
+}
+
+.App {
+  text-align: center;
+  max-width: 100vw;
+}
+
+.section-container {
+  background-color: var(--background-color-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  max-height: var(--section-height);
+  margin: 0;
+  padding: 0;
+}
+
+.section-container.landing-section {
+  background-color: var(--background-color-light);
+  max-height: calc(100vh - var(--navbar-height));
+}
+
+.section-container .info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 90vw;
+  height: 50vh;
+  /* background-color: var(--background-color-dark);
+  box-shadow: 0 0 5px 5px var(--background-color-dark); */
+  /* box-shadow: 0 0 5px 5px var(--background-color-info); */
+  border-radius: 1vw;
+}
+
+.section-container.dark {
+  background-color: var(--background-color-dark);
+}
+
+.react-icon {
+  color: black;
+  font-size: 2.5vh;
+}
+
+@media (min-width: 992px) {
+
+  .section-container .info-container {
+    max-width: 80vh;
+    min-height: 30vh;
+    height: 50vh;
+  }
+}
+
+
+.scroll-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 75px;
+ }
+ 
+ .chevron {
+   position: absolute;
+   bottom: 50px;
+   width: 40px;
+   height: 3px;
+   opacity: 0;
+   transform: scale(0.3);
+   animation: move-chevron 6s ease-out infinite;
+ }
+
+ @media (max-width: calc(650px + 15vw)) {
+  
+  .scroll-container {
+    width: 10vw;
+  }
+
+  .chevron {
+    width: 10vw;
+  }
+ }
+ 
+ .chevron:first-child {
+   animation: move-chevron 6s ease-out 2s infinite;
+ }
+ 
+ .chevron:nth-child(2) {
+   animation: move-chevron 6s ease-out 4s infinite;
+ }
+ 
+ .chevron:before,
+ .chevron:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: #2c3e50;
+ }
+ 
+ .chevron:before {
+  left: 0;
+  transform: skewY(30deg);
+ }
+ 
+ .chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skewY(-30deg);
+ }
+ 
+ @keyframes move-chevron {
+  25% {
+   opacity: 1;
+   }
+  33.3% {
+   opacity: 1;
+   transform: translateY(100%);
+  }
+  66.6% {
+   opacity: 1;
+   transform: translateY(500%);
+  }
+  100% {
+   opacity: 0;
+   transform: translateY(1000%) scale(0.3);
+  }
+ }
+
+ a:hover {
+  cursor: pointer;
+ }
