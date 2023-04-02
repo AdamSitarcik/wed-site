@@ -7,14 +7,19 @@ font-family: 'IM Fell English SC', serif; */
 :root {
   --background-color-info: #fafdf344;
   --background-color-light: #fafdf398;
-  --background-color-dark: #F5F5DC98;
+  --background-color-dark: #dadabf98;
   --navbar-height: 10vh;
-  --section-height: 75vh;
+  --section-height: 100vh;
   --allura: 'Allura', cursive;
   --im-fell-english: 'IM Fell English', serif;
   --im-fell-english-sc: 'IM Fell English SC', serif;
   --bckg-img-max-width: 650px;
-
+  --slide-width: 70vw;
+  --slide-max-width: 700px;
+  --slide-min-width: 200px;
+  --slide-heigth: calc(var(--slide-width) * 9/16);
+  --slide-max-heigth: calc(var(--slide-max-width) *9/16);
+  --slide-min-heigth: 300px;
 }
 
 body {
@@ -127,20 +132,20 @@ h2 {
   align-items: center;
   width: 50px;
   height: 75px;
- }
- 
- .chevron {
-   position: absolute;
-   bottom: 50px;
-   width: 40px;
-   height: 3px;
-   opacity: 0;
-   transform: scale(0.3);
-   animation: move-chevron 6s ease-out infinite;
- }
+}
 
- @media (max-width: calc(650px + 15vw)) {
-  
+.chevron {
+  position: absolute;
+  bottom: 50px;
+  width: 40px;
+  height: 3px;
+  opacity: 0;
+  transform: scale(0.3);
+  animation: move-chevron 6s ease-out infinite;
+}
+
+@media (max-width: calc(650px + 15vw)) {
+
   .scroll-container {
     width: 10vw;
   }
@@ -148,55 +153,58 @@ h2 {
   .chevron {
     width: 10vw;
   }
- }
- 
- .chevron:first-child {
-   animation: move-chevron 6s ease-out 2s infinite;
- }
- 
- .chevron:nth-child(2) {
-   animation: move-chevron 6s ease-out 4s infinite;
- }
- 
- .chevron:before,
- .chevron:after {
+}
+
+.chevron:first-child {
+  animation: move-chevron 6s ease-out 2s infinite;
+}
+
+.chevron:nth-child(2) {
+  animation: move-chevron 6s ease-out 4s infinite;
+}
+
+.chevron:before,
+.chevron:after {
   content: '';
   position: absolute;
   top: 0;
   height: 100%;
   width: 50%;
   background: #2c3e50;
- }
- 
- .chevron:before {
+}
+
+.chevron:before {
   left: 0;
   transform: skewY(30deg);
- }
- 
- .chevron:after {
+}
+
+.chevron:after {
   right: 0;
   width: 50%;
   transform: skewY(-30deg);
- }
- 
- @keyframes move-chevron {
-  25% {
-   opacity: 1;
-   }
-  33.3% {
-   opacity: 1;
-   transform: translateY(100%);
-  }
-  66.6% {
-   opacity: 1;
-   transform: translateY(500%);
-  }
-  100% {
-   opacity: 0;
-   transform: translateY(1000%) scale(0.3);
-  }
- }
+}
 
- a:hover {
+@keyframes move-chevron {
+  25% {
+    opacity: 1;
+  }
+
+  33.3% {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+
+  66.6% {
+    opacity: 1;
+    transform: translateY(500%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(1000%) scale(0.3);
+  }
+}
+
+a:hover {
   cursor: pointer;
- }
+}

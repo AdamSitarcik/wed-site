@@ -1,5 +1,6 @@
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { Link } from 'react-scroll';
+import ScrollButton from '../components/ScollButton';
 
 const Landing = ({ className }) => {
     return (
@@ -17,13 +18,7 @@ const Landing = ({ className }) => {
                     </a>
                 </h2>
             </div>
-            <Link to="about-us" smooth={true}>
-                <div className="scroll-container">
-                    <div className="chevron"></div>
-                    <div className="chevron"></div>
-                    <div className="chevron"></div>
-                </div>
-            </Link>
+            <ScrollButton />
         </section>
     );
 };

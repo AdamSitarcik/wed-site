@@ -1,4 +1,5 @@
 // import logo from './logo_black.svg';
+import { useEffect } from 'react';
 import BigNavbar from './components/BigNavbar';
 import SmallNavbar from './components/SmallNavbar';
 import Background from './components/Background';
@@ -13,6 +14,10 @@ import {
 } from './sections';
 
 function App() {
+    useEffect(() => {
+        window.history.scrollRestoration = 'manual'
+      }, []);
+    
     return (
         <div className="App">
             <header className="App-header">
