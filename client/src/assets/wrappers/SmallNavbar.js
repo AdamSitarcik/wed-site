@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.aside`
-    height: var(--navbar-height);
+    height: 0;
     display: flex;
     flex-direction: column;
     position: relative;
