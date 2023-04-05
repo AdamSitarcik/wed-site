@@ -1,33 +1,37 @@
+import { useAppContext } from '../context/appContext';
 import Wrapper from '../assets/wrappers/SmallNavbar.js';
-import { Link } from 'react-scroll';
 import Logo from './Logo.js';
+import { FaTimes } from 'react-icons/fa';
+import NavLinks from './NavLinks';
 
 const Navbar = () => {
-    const links = [
-        { id: 1, text: 'O nás', navigate: '#about-us' },
-        { id: 2, text: 'Harmonogram', navigate: '#timeline' },
-        { id: 3, text: 'Informácie', navigate: '#info' },
-        { id: 4, text: 'Registrácia', navigate: '#register' },
-        { id: 5, text: 'Kontakt', navigate: '#contact' },
-    ];
+    const { toggleNavbar, showSmallNavbar } = useAppContext();
+
+    const skuska = () => {
+        console.log('click');
+    }
 
     return (
         <Wrapper>
-            <Logo href="/" />
-            {links.map((link) => {
-                const { id, text, navigate } = link;
-                return (
-                    <Link
-                        to={navigate}
-                        key={id}
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
+            <div
+                className={
+                    showSmallNavbar
+                        ? 'navbar-container show-navbar'
+                        : 'navbar-container'
+                }
+            >
+                <div className="navbar-content">
+                    <Logo />
+                    <button
+                        type="button"
+                        className="close-btn"
+                        onClick={skuska}
                     >
-                        {text}
-                    </Link>
-                );
-            })}
+                        <FaTimes />
+                    </button>
+                    <NavLinks />
+                </div>
+            </div>
         </Wrapper>
     );
 };

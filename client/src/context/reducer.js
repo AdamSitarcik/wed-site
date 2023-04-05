@@ -1,9 +1,9 @@
-import { TOGGLE_SIDEBAR } from './actions';
-import { initialState } from './appContext.js';
+import { TOGGLE_NAVBAR } from './actions';
 
 const reducer = (state, action) => {
-    if (action.type === TOGGLE_SIDEBAR) {
-        return { ...state, showSidebar: !state.showSidebar };
+    switch (action.type) {
+        case TOGGLE_NAVBAR:
+            return { ...state, showSmallNavbar: !state.showSmallNavbar };
     }
 };
 

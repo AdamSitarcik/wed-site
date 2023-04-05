@@ -1,5 +1,6 @@
 // import logo from './logo_black.svg';
 import { useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import BigNavbar from './components/BigNavbar';
 import SmallNavbar from './components/SmallNavbar';
 import Background from './components/Background';
@@ -15,11 +16,11 @@ import {
 
 function App() {
     useEffect(() => {
-        window.history.scrollRestoration = 'manual'
-      }, []);
-    
+        window.history.scrollRestoration = 'manual';
+    }, []);
+
     return (
-        <div className="App">
+        <BrowserRouter>
             <header className="App-header">
                 <BigNavbar />
                 <SmallNavbar />
@@ -33,7 +34,7 @@ function App() {
                 <Register className="section-container" />
                 <Contact className="section-container dark" />
             </div>
-        </div>
+        </BrowserRouter>
     );
 }
 

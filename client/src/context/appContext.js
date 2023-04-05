@@ -1,22 +1,30 @@
-import React, { useReducer, useContext } from 'react';
+import React, { useReducer, useContext, createContext } from 'react';
 import reducer from './reducer';
-import { TOGGLE_SIDEBAR } from './actions';
+import { TOGGLE_NAVBAR } from './actions';
 
 const initialState = {
-    showSidebar: false,
+    showSmallNavbar: true,
+    sections: [
+        { id: 1, text: 'O nás', navigate: 'about-us' },
+        { id: 2, text: 'Harmonogram', navigate: 'timeline' },
+        { id: 3, text: 'Informácie', navigate: 'info' },
+        { id: 4, text: 'Registrácia', navigate: 'register' },
+        { id: 5, text: 'Kontakt', navigate: 'contact' },
+    ],
 };
 
-const AppContext = React.createContext();
+const AppContext = createContext(initialState);
 
 const AppProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    const toggleSidebar = () => {
-        dispatch({ type: TOGGLE_SIDEBAR });
+    const toggleNavbar = () => {
+        // dispatch({ type: TOGGLE_NAVBAR });
+        console.log('toggle');
     };
 
     return (
-        <AppContext.Provider value={{ ...state, toggleSidebar }}>
+        <AppContext.Provider value={{ ...state, toggleNavbar }}>
             {children}
         </AppContext.Provider>
     );

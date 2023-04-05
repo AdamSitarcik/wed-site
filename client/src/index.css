@@ -5,14 +5,17 @@ font-family: 'IM Fell English', serif;
 font-family: 'IM Fell English SC', serif; */
 
 :root {
-  --background-color-info: #fafdf344;
-  --background-color-light: #fafdf398;
-  --background-color-dark: #dadabf98;
-  --navbar-height: 10vh;
-  --section-height: 100vh;
   --allura: 'Allura', cursive;
   --im-fell-english: 'IM Fell English', serif;
   --im-fell-english-sc: 'IM Fell English SC', serif;
+
+  --background-color-info: #fafdf344;
+  --background-color-light: #fafdf398;
+  --background-color-light-non-transparent: #fafdf3;
+  --background-color-dark: #dadabf98;
+
+  --navbar-height: 10vh;
+  --section-height: 100vh;
   --bckg-img-max-width: 650px;
   --slide-width: 70vw;
   --slide-max-width: 700px;
@@ -20,9 +23,14 @@ font-family: 'IM Fell English SC', serif; */
   --slide-heigth: calc(var(--slide-width) * 9/16);
   --slide-max-heigth: calc(var(--slide-max-width) *9/16);
   --slide-min-heigth: 300px;
+  
+  --transition: 0.3s ease-in-out all;
+
 }
 
 body {
+  text-align: center;
+  max-width: 100vw;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -65,10 +73,7 @@ h2 {
   font-family: var(--allura)
 }
 
-.App {
-  text-align: center;
-  max-width: 100vw;
-}
+.App {}
 
 .section-container {
   background-color: var(--background-color-light);
