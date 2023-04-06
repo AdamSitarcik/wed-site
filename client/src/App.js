@@ -1,9 +1,10 @@
 // import logo from './logo_black.svg';
-import { useEffect } from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import BigNavbar from './components/BigNavbar';
-import SmallNavbar from './components/SmallNavbar';
-import Background from './components/Background';
+import { useEffect } from "react";
+import { BrowserRouter } from "react-router-dom";
+import { AppProvider } from "./context/appContext";
+import BigNavbar from "./components/BigNavbar";
+import SmallNavbar from "./components/SmallNavbar";
+import Background from "./components/Background";
 
 import {
     Register,
@@ -12,15 +13,15 @@ import {
     Timeline,
     Info,
     Landing,
-} from './sections';
+} from "./sections";
 
 function App() {
     useEffect(() => {
-        window.history.scrollRestoration = 'manual';
+        window.history.scrollRestoration = "manual";
     }, []);
 
     return (
-        <BrowserRouter>
+        <div>
             <header className="App-header">
                 <BigNavbar />
                 <SmallNavbar />
@@ -34,7 +35,7 @@ function App() {
                 <Register className="section-container" />
                 <Contact className="section-container dark" />
             </div>
-        </BrowserRouter>
+        </div>
     );
 }
 

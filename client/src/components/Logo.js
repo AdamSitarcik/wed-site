@@ -1,8 +1,18 @@
-const Logo = () => {
+import Wrapper from "../assets/wrappers/Logo.js";
+
+const Logo = ({ handleClick }) => {
     return (
-        <a href="/">
-            <img src="../logo_black.svg" className="App-logo" alt="logo" />
-        </a>
+        <Wrapper>
+            <div className="logo-container">
+                <a href="/" className="app-logo">
+                    <img
+                        src="../logo_black.svg"
+                        alt="logo"
+                        onClick={handleClick}
+                    />
+                </a>
+            </div>
+        </Wrapper>
     );
 };
 

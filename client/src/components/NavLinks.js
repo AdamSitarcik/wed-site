@@ -15,7 +15,7 @@ const NavLinks = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        // onClick={toggleNavbar}
+                        onClick={toggleNavbar}
                     >
                         {text}
                     </Link>

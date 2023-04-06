@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.aside`
     display: none;
@@ -8,8 +8,7 @@ const Wrapper = styled.aside`
         .navbar-container {
             width: 100vw;
             background-color: var(--background-color-light);
-            padding-top: 10px;
-            padding-bottom: 10px;
+            margin: 0;
             height: var(--navbar-height);
             display: flex;
             align-items: center;
@@ -19,11 +18,17 @@ const Wrapper = styled.aside`
         }
 
         .content {
+            height: 100%;
             width: 100%;
+            padding: 0 3vw;
             max-width: 1200px;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .content button{
+          position: fixed;
         }
 
         .nav-links {
@@ -33,11 +38,17 @@ const Wrapper = styled.aside`
             justify-content: space-between;
         }
 
-        .App-logo {
-            height: 8vh;
-            pointer-events: none;
-            margin: 0;
+        .logo {
+          display: none;
         }
+
+        .show-logo{
+          display: block;
+          position: fixed;
+          top: 5vh;
+          left: 5vw;
+        }
+
     }
 `;
 

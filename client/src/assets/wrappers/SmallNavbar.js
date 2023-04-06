@@ -1,8 +1,20 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.aside`
     @media (min-width: 992px) {
         display: none;
+    }
+
+    .toggle-btn {
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        top: 2vh;
+        left: 2vw;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: calc(15px + 3vw);
     }
 
     .navbar-container {
@@ -64,14 +76,17 @@ const Wrapper = styled.aside`
     }
 
     .App-logo {
+        z-index: 10;
         height: 20%;
         min-height: 32px;
-        position: absolute;
-        left: 50%;
-        top: 3%;
-        transform: translate(-50%, -3%);
+        top: 10px;
+        position: relative;
         pointer-events: none;
         margin: 0;
+    }
+
+    .App-logo img {
+        height: 100%;
     }
 `;
 
