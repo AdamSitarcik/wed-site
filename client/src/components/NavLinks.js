@@ -1,11 +1,11 @@
 import { useAppContext } from '../context/appContext';
 import { Link } from 'react-scroll';
 
-const NavLinks = () => {
+const NavLinks = ({showNavlinks}) => {
     const { sections, toggleNavbar } = useAppContext();
 
     return (
-        <div className='nav-links'>
+        <div className={showNavlinks ? 'show-navlinks nav-links' : 'nav-links'}>
             {sections.map((section) => {
                 const { id, text, navigate } = section;
                 return (

@@ -1,26 +1,24 @@
-import Wrapper from "../assets/wrappers/BigNavbar.js";
-import { Link } from "react-scroll";
-import Logo from "./Logo.js";
-import { useAppContext } from "../context/appContext.js";
-import NavLinks from "./NavLinks.js";
-import { useState } from "react";
-import { useEffect } from "react";
+import Wrapper from '../assets/wrappers/BigNavbar.js';
+import { Link } from 'react-scroll';
+import Logo from './Logo.js';
+import { useAppContext } from '../context/appContext.js';
+import { NavLinks } from './';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
     const [showLogo, setShowLogo] = useState(false);
     useEffect(() => {
-        window.addEventListener("scroll", () => {
+        window.addEventListener('scroll', () => {
             setShowLogo(window.scrollY > 150);
         });
-
     }, []);
 
     return (
         <Wrapper>
+            <Logo showLogo={showLogo} />
             <div className="navbar-container">
                 <div className="content">
-                    {showLogo && <Logo />}
-                    <NavLinks />
+                    <NavLinks showNavlinks={!showLogo} />
                 </div>
             </div>
         </Wrapper>

@@ -64,30 +64,6 @@ const Wrapper = styled.aside`
         z-index: 99;
         opacity: 1;
     }
-
-    .close-btn {
-        font-size: 20px;
-        border: none;
-        background: none;
-        position: absolute;
-        right: 5px;
-        top: 5px;
-        cursor: pointer;
-    }
-
-    .App-logo {
-        z-index: 10;
-        height: 20%;
-        min-height: 32px;
-        top: 10px;
-        position: relative;
-        pointer-events: none;
-        margin: 0;
-    }
-
-    .App-logo img {
-        height: 100%;
-    }
 `;
 
 export default Wrapper;

@@ -6,6 +6,10 @@ const Wrapper = styled.aside`
         display: block;
 
         .navbar-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
             width: 100vw;
             background-color: var(--background-color-light);
             margin: 0;
@@ -28,16 +32,32 @@ const Wrapper = styled.aside`
         }
 
         .nav-links {
+            opacity: 0;
             padding: 0 2vw;
             width: 100%;
             display: flex;
             justify-content: space-between;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .nav-links.show-navlinks {
+            opacity: 1;
         }
 
         .logo-container {
             position: fixed;
-            width: 5vw;
-            transition: 1s ease-in-out all;
+            top: 3vh;
+            left: 3vw;
+            opacity: 0;
+            width: 3vw;
+            transition: opacity 0.5s ease-in-out;
+            z-index: -1;
+        }
+
+        .logo-container.show-logo {
+            position: fixed;
+            opacity: 1;
+            z-index: 99;
         }
     }
 `;

@@ -1,16 +1,24 @@
-import Wrapper from "../assets/wrappers/Logo.js";
+import { Link } from 'react-scroll';
+import Wrapper from '../assets/wrappers/Logo.js';
 
-const Logo = ({ handleClick }) => {
+const Logo = ({ handleClick, showLogo }) => {
     return (
         <Wrapper>
-            <div className="logo-container">
-                <a href="/" className="app-logo">
-                    <img
-                        src="../logo_black.svg"
-                        alt="logo"
-                        onClick={handleClick}
-                    />
-                </a>
+            <div
+                className={
+                    showLogo ? 'show-logo logo-container' : 'logo-container'
+                }
+            >
+                <Link
+                    to="/"
+                    className="app-logo"
+                    activeClass="active"
+                    spy={true}
+                    smooth={true}
+                    onClick={handleClick}
+                >
+                    <img src="../logo_black.svg" alt="logo" />
+                </Link>
             </div>
         </Wrapper>
     );

@@ -1,10 +1,5 @@
 // import logo from './logo_black.svg';
 import { useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
-import { AppProvider } from "./context/appContext";
-import BigNavbar from "./components/BigNavbar";
-import SmallNavbar from "./components/SmallNavbar";
-import Background from "./components/Background";
 
 import {
     Register,
@@ -22,11 +17,6 @@ function App() {
 
     return (
         <div>
-            <header className="App-header">
-                <BigNavbar />
-                <SmallNavbar />
-            </header>
-            {/* <Background /> */}
             <div className="sections">
                 <Landing className="section-container landing-section" />
                 <AboutUs className="section-container dark" />
