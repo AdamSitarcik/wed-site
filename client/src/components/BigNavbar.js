@@ -9,7 +9,10 @@ import { useEffect } from "react";
 const Navbar = () => {
     const [showLogo, setShowLogo] = useState(false);
     useEffect(() => {
-        setShowLogo(window.scrollY > 100);
+        window.addEventListener("scroll", () => {
+            setShowLogo(window.scrollY > 150);
+        });
+
     }, []);
 
     return (

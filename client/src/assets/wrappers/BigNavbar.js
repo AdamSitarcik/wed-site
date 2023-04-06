@@ -27,10 +27,6 @@ const Wrapper = styled.aside`
             align-items: center;
         }
 
-        .content button{
-          position: fixed;
-        }
-
         .nav-links {
             padding: 0 2vw;
             width: 100%;
@@ -38,17 +34,11 @@ const Wrapper = styled.aside`
             justify-content: space-between;
         }
 
-        .logo {
-          display: none;
+        .logo-container {
+            position: fixed;
+            width: 5vw;
+            transition: 1s ease-in-out all;
         }
-
-        .show-logo{
-          display: block;
-          position: fixed;
-          top: 5vh;
-          left: 5vw;
-        }
-
     }
 `;
 
