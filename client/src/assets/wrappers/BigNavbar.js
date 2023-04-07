@@ -40,7 +40,7 @@ const Wrapper = styled.aside`
             transition: opacity 0.5s ease-in-out;
         }
 
-        .nav-links.show-navlinks {
+        .show-navlinks {
             opacity: 1;
         }
 
@@ -54,7 +54,7 @@ const Wrapper = styled.aside`
             z-index: -1;
         }
 
-        .logo-container.show-logo {
+        .show-logo {
             position: fixed;
             opacity: 1;
             z-index: 99;

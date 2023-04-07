@@ -201,3 +201,8 @@ h2 {
 a:hover {
     cursor: pointer;
 }
+
+.show {
+    z-index: 99;
+    opacity: 1;
+}

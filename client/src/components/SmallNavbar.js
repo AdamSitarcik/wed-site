@@ -17,8 +17,12 @@ const Navbar = () => {
                         ? 'navbar-container show-navbar'
                         : 'navbar-container'
                 }
+                onClick={toggleNavbar}
             >
-                <div className="navbar-content">
+                <div
+                    className="navbar-content"
+                    onClick={(e) => e.stopPropagation()}
+                >
                     <Logo handleClick={toggleNavbar} />
                     <NavLinks />
                 </div>

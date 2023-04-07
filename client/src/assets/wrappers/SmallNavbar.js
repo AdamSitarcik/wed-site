@@ -23,6 +23,7 @@ const Wrapper = styled.aside`
         align-items: center;
         flex-direction: column;
         opacity: 0;
+        z-index: -1;
         position: fixed;
         background-color: rgb(0, 0, 0, 0.7);
         z-index: -1;
@@ -31,6 +32,7 @@ const Wrapper = styled.aside`
     }
 
     .navbar-content {
+        z-index: 99;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -47,6 +49,11 @@ const Wrapper = styled.aside`
         box-shadow: 0 0 5px 5px var(--background-color-light-non-transparent);
     }
 
+    .show-navbar {
+        z-index: 50;
+        opacity: 1;
+    }
+
     .nav-links {
         height: 75%;
         display: flex;
@@ -58,11 +65,6 @@ const Wrapper = styled.aside`
         align-items: center;
         font-size: 150%;
         color: black;
-    }
-
-    .show-navbar {
-        z-index: 99;
-        opacity: 1;
     }
 `;
 
