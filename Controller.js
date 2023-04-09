@@ -4,7 +4,7 @@ import BadRequestError from './BadRequestError.js';
 
 const createGuest = async (req, res) => {
     console.log(req.body);
-    const {name, note} = req.body;
+    const {name, message} = req.body;
     if(!name) {
         throw new BadRequestError('Vyplňte prosím meno');
     }

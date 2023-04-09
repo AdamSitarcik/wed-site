@@ -1,9 +1,9 @@
-import FormRow from '../components/FormRow';
+import RegisterForm from '../components/RegisterForm';
 
 const Register = ({className}) => {
     return (
         <section id='register' className={className}>
-            <p>Register</p>
+            <RegisterForm />
         </section>
     );
 };

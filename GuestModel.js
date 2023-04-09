@@ -7,7 +7,7 @@ const GuestSchema = new mongoose.Schema({
         maxlength: 30,
 
     },
-    note: {
+    message: {
         type: String
     }
 });

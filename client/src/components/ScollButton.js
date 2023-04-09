@@ -1,14 +1,17 @@
 import { Link } from 'react-scroll';
+import Wrapper from '../assets/wrappers/ScrollButton';
 
-const ScrollButton = () => {
+const ScrollButton = ({whereTo}) => {
     return (
-        <Link to="about-us" smooth={true}>
-            <div className="scroll-container">
-                <div className="chevron"></div>
-                <div className="chevron"></div>
-                <div className="chevron"></div>
-            </div>
-        </Link>
+        <Wrapper>
+            <Link to={whereTo} smooth={true}>
+                <div className="scroll-container">
+                    <div className="chevron"></div>
+                    <div className="chevron"></div>
+                    <div className="chevron"></div>
+                </div>
+            </Link>
+        </Wrapper>
     );
 };
 

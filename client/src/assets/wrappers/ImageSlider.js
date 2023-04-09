@@ -6,7 +6,6 @@ const Wrapper = styled.aside`
         justify-content: center;
         align-items: center;
         background-color: var(--background-color-dark);
-        /* box-shadow: 0 0 10px 10px #333333ce; */
         width: 100vw;
         height: calc(var(--slide-heigth) + 5vh);
         max-height: calc(var(--slide-max-heigth) + 0vh);
@@ -25,14 +24,15 @@ const Wrapper = styled.aside`
     }
 
     .slide {
-        box-shadow: 0 0 20px 20px var(--background-color-dark) inset;
         width: 100%;
         min-width: var(--slide-min-heigth);
+        max-width: var(--slide-max-width);
         height: 100%;
         min-height: var(--slide-min-width);
+        max-height: var(--slide-max-heigth);
         background-position: center;
         background-size: cover;
-        animation: zoomin 5s 1;
+        animation: zoomin 10s 1;
     }
 
     .prev-arrow-container,

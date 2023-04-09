@@ -5,6 +5,7 @@ import ImageSlider from './ImageSlider';
 import NavLinks from './NavLinks.js';
 import ScrollButton from './ScollButton';
 import Logo from './Logo.js';
+import FormArea from './FormArea.js';
 
 export {
     BigNavbar,
@@ -14,4 +15,5 @@ export {
     NavLinks,
     ScrollButton,
     Logo,
+    FormArea,
 };
