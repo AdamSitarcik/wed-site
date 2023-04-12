@@ -1,5 +1,5 @@
 import Wrapper from '../assets/wrappers/RegisterForm';
-import { FormRow, FormArea } from '.';
+import { FormRow, FormArea, Alert } from '.';
 import { useAppContext } from '../context/appContext.js';
 import { useState } from 'react';
 
@@ -9,9 +9,11 @@ const initialState = {
     message: '',
 };
 
+
 const RegisterForm = () => {
     const [values, setValues] = useState(initialState);
-    const { registerGuest, displayAlert } = useAppContext();
+    const { registerGuest, showAlert, clearValues, displayAlert, isLoading } =
+        useAppContext();
 
     const handleChange = (e) => {
         setValues({ ...values, [e.target.name]: e.target.value });
@@ -24,11 +26,14 @@ const RegisterForm = () => {
 
         if (!firstName || !lastName) {
             displayAlert();
+            return;
         }
+        registerGuest();
     };
 
     return (
         <Wrapper>
+            {showAlert && <Alert />}
             <form onSubmit={handleSubmit} className="form">
                 <div className="form-container">
                     <FormRow
@@ -56,7 +61,11 @@ const RegisterForm = () => {
                         placeholder="Intolerancie, vegetariánske menu, detská stolička alebo iné špeciálne požiadavky :)"
                         className="text-area input"
                     />
-                    <button type="submit" className="submit-btn">
+                    <button
+                        type="submit"
+                        className="submit-btn"
+                        disabled={isLoading}
+                    >
                         Potvrdiť účasť
                     </button>
                 </div>

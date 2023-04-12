@@ -13,13 +13,19 @@
     --light-grey: #f0f4f8;
     --light-grey-transparent: rgba(240, 244, 248, 0.7);
     --dark-grey: rgba(159, 179, 200, 0.7);
-    --dark-grey-transparent:rgba(159, 179, 200, 0.7);
+    --dark-grey-transparent: rgba(159, 179, 200, 0.7);
+    --blue: rgb(88, 169, 215);
+    --blue-transparent: rgba(88, 169, 215, 0.7);
+    --red-light: #f8d7da;
+    --red-dark: #842029;
+    --green-light: #d1e7dd;
+    --green-dark: #0f5132;
 
     --navbar-height: 7vh;
     --section-height: 100vh;
     --bckg-img-max-width: 650px;
     --slide-width: 70vw;
-    --slide-max-width: 700px;
+    --slide-max-width: 800px;
     --slide-min-width: 200px;
     --slide-heigth: calc(var(--slide-width) * 9 / 16);
     --slide-max-heigth: calc(var(--slide-max-width) * 9 / 16);
@@ -139,7 +145,6 @@ a:hover {
 
 .form:hover {
     box-shadow: 0 0 5px 5px var(--light -grey);
-    
 }
 
 @media (min-width: calc(650px + 15vw)) {
@@ -172,5 +177,10 @@ a:hover {
 
     .landing-section .info-container {
         height: 40vh;
+    }
+
+    .form {
+        height: 60vh;
+        max-width: 100%;
     }
 }

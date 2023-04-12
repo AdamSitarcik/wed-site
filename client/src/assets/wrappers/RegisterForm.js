@@ -11,18 +11,18 @@ const Wrapper = styled.aside`
     }
 
     .input {
+        box-sizing: border-box;
         width: 100%;
-        margin-top: 10px;
-        padding: 2px 4px;
+        margin-top: 8px;
+        padding: 5px 5px;
         border-radius: 5px;
         border: 2px;
         border-style: solid;
-        border-color: var(--dark-grey);
         background-color: var(--light-grey);
     }
 
     .form-row label {
-        text-align: start;
+        text-align: left;
         display: block;
         width: 100%;
         font-size: 1.3rem;
@@ -32,24 +32,26 @@ const Wrapper = styled.aside`
         width: 100%;
     }
 
-    .input:focus {
-        box-shadow: 0 0 5px 2px var(--dark-grey);
-    }
-    
-    .input:active {
-        box-shadow: 0 0 5px 2px var(--dark-grey);
-    }
-
     .submit-btn {
         padding: 6px;
         background-color: var(--light-grey);
         border: 2px;
         border-style: solid;
-        border-color: var(--dark-grey);
     }
 
-    .submit-btn:hover {
-        box-shadow: 0 0 5px 2px var(--dark-grey);
+    .input,
+    .submit-btn {
+        border-color: var(--blue);
+    }
+
+    .submit-btn:hover,
+    .input:hover,
+    .input:focus {
+        box-shadow: 0 0 5px 2px var(--blue);
+    }
+
+    .input:focus {
+        outline: none;
     }
 `;
 

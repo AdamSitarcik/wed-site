@@ -1,6 +1,14 @@
 import { useReducer, useContext, createContext } from 'react';
 import reducer from './reducer';
-import { TOGGLE_NAVBAR } from './actions';
+import {
+    TOGGLE_NAVBAR,
+    DISPLAY_ALERT,
+    CLEAR_ALERT,
+    BEGIN_REGISTER_USER,
+    SUCCESS_REGISTER_USER,
+    ERROR_REGISTER_USER,
+    CLEAR_VALUES,
+} from './actions';
 
 const initialState = {
     showSmallNavbar: false,
@@ -11,7 +19,11 @@ const initialState = {
         { id: 4, text: 'Registrácia', navigate: 'register' },
         { id: 5, text: 'Kontakt', navigate: 'contact' },
     ],
-    showAlert: false,
+    isLoading: false,
+    showAlert: true,
+    alertType: '',
+    alertText: '',
+    guest: { firstName: '', lastName: '', message: '' },
 };
 
 const AppContext = createContext(initialState);
@@ -19,20 +31,36 @@ const AppContext = createContext(initialState);
 const AppProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    const showAlert = () => {
-        console.log('show alert');
+    const displayAlert = () => {
+        dispatch({ type: DISPLAY_ALERT });
+        clearAlert();
     };
 
     const clearAlert = () => {
         console.log('clear alert');
+        setTimeout(() => {
+            dispatch({ type: CLEAR_ALERT });
+        }, 3000);
     };
 
     const toggleNavbar = () => {
         dispatch({ type: TOGGLE_NAVBAR });
     };
 
+    const clearValues = () => {
+        dispatch({ type: CLEAR_VALUES });
+    };
+
     const registerGuest = () => {
-        console.log('registrovat');
+        dispatch({ type: BEGIN_REGISTER_USER });
+        try {
+            dispatch({ type: SUCCESS_REGISTER_USER });
+            // clearValues();
+        } catch (error) {
+            console.log(error);
+            dispatch({ type: ERROR_REGISTER_USER });
+        }
+        clearAlert();
     };
 
     return (
@@ -41,8 +69,9 @@ const AppProvider = ({ children }) => {
                 ...state,
                 toggleNavbar,
                 registerGuest,
-                showAlert,
+                displayAlert,
                 clearAlert,
+                clearValues,
             }}
         >
             {children}

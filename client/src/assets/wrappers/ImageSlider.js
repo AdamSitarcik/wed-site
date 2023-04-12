@@ -75,13 +75,6 @@ const Wrapper = styled.aside`
         color: white;
     }
 
-    @media (max-width: 650px) {
-        .prev-arrow,
-        .next-arrow {
-            font-size: 30px;
-        }
-    }
-
     .prev-arrow {
         left: 0.8vw;
     }
@@ -96,6 +89,24 @@ const Wrapper = styled.aside`
         }
         100% {
             -webkit-transform: scale(1.3);
+        }
+    }
+
+    @media (max-width: 650px) {
+        .prev-arrow,
+        .next-arrow {
+            font-size: 30px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .slide-container {
+            width: 100%;
+        }
+
+        .prev-arrow-container,
+        .next-arrow-container {
+            width: 7vw;
         }
     }
 `;

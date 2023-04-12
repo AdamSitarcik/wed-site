@@ -6,11 +6,11 @@ const Wrapper = styled.aside`
     }
 
     .toggle-btn {
-        width: 100px;
-        height: 100px;
+        width: 75px;
+        height: 75px;
         position: fixed;
-        top: 2vh;
-        left: 2vw;
+        top: 0;
+        left: 0;
         background: none;
         border: none;
         cursor: pointer;
