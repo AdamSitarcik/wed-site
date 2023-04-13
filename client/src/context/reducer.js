@@ -5,7 +5,8 @@ import {
     BEGIN_REGISTER_USER,
     SUCCESS_REGISTER_USER,
     ERROR_REGISTER_USER,
-    CLEAR_VALUES
+    CLEAR_VALUES,
+    HANDLE_CHANGE,
 } from './actions';
 
 const reducer = (state, action) => {
@@ -17,7 +18,7 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 showAlert: true,
-                alertText: 'Prosím vyplňte meno a priezvisko!',
+                alertText: 'Prosím vyplňte meno aj priezvisko!',
                 alertType: 'danger',
             };
 
@@ -31,6 +32,9 @@ const reducer = (state, action) => {
                 message: '',
             };
             return { ...state, ...initialState };
+
+        case HANDLE_CHANGE:
+            return { ...state, [action.payload.name]: action.payload.value };
 
         case BEGIN_REGISTER_USER:
             return { ...state, isLoading: true };

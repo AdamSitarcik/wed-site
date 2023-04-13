@@ -8,6 +8,7 @@ import {
     SUCCESS_REGISTER_USER,
     ERROR_REGISTER_USER,
     CLEAR_VALUES,
+    HANDLE_CHANGE,
 } from './actions';
 
 const initialState = {
@@ -20,10 +21,12 @@ const initialState = {
         { id: 5, text: 'Kontakt', navigate: 'contact' },
     ],
     isLoading: false,
-    showAlert: true,
+    showAlert: false,
     alertType: '',
     alertText: '',
-    guest: { firstName: '', lastName: '', message: '' },
+    firstName: '',
+    lastName: '',
+    message: '',
 };
 
 const AppContext = createContext(initialState);
@@ -37,7 +40,6 @@ const AppProvider = ({ children }) => {
     };
 
     const clearAlert = () => {
-        console.log('clear alert');
         setTimeout(() => {
             dispatch({ type: CLEAR_ALERT });
         }, 3000);
@@ -51,11 +53,15 @@ const AppProvider = ({ children }) => {
         dispatch({ type: CLEAR_VALUES });
     };
 
+    const handleChange = ({ name, value }) => {
+        dispatch({ type: HANDLE_CHANGE, payload: { name, value } });
+    };
+
     const registerGuest = () => {
         dispatch({ type: BEGIN_REGISTER_USER });
         try {
             dispatch({ type: SUCCESS_REGISTER_USER });
-            // clearValues();
+            clearValues();
         } catch (error) {
             console.log(error);
             dispatch({ type: ERROR_REGISTER_USER });
@@ -72,6 +78,7 @@ const AppProvider = ({ children }) => {
                 displayAlert,
                 clearAlert,
                 clearValues,
+                handleChange,
             }}
         >
             {children}
