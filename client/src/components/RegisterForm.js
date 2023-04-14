@@ -15,7 +15,6 @@ const RegisterForm = () => {
     } = useAppContext();
 
     const handleChangeHelper = (e) => {
-        console.log(firstName.length);
         handleChange({ name: e.target.name, value: e.target.value });
     };
 
@@ -27,7 +26,9 @@ const RegisterForm = () => {
             return;
         }
 
-        registerGuest();
+        const currentGuest = { firstName, lastName, message };
+
+        registerGuest({ currentGuest });
     };
 
     return (

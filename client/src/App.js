@@ -23,7 +23,7 @@ function App() {
                 <Timeline className="section-container" />
                 <Info className="section-container dark" />
                 <Register className="section-container" />
-                <Contact className="section-container dark" />
+                <Contact className="section-container dark contact-section" />
             </div>
         </div>
     );

@@ -1,5 +1,6 @@
 import { useReducer, useContext, createContext } from 'react';
 import reducer from './reducer';
+import axios from 'axios';
 import {
     TOGGLE_NAVBAR,
     DISPLAY_ALERT,
@@ -34,6 +35,8 @@ const AppContext = createContext(initialState);
 const AppProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
+    // const fetch = axios.create({ baseURL: '/api' });
+
     const displayAlert = () => {
         dispatch({ type: DISPLAY_ALERT });
         clearAlert();
@@ -57,9 +60,11 @@ const AppProvider = ({ children }) => {
         dispatch({ type: HANDLE_CHANGE, payload: { name, value } });
     };
 
-    const registerGuest = () => {
+    const registerGuest = async ({ currentGuest }) => {
         dispatch({ type: BEGIN_REGISTER_USER });
         try {
+            await axios.post('/api/create-guest', currentGuest);
+
             dispatch({ type: SUCCESS_REGISTER_USER });
             clearValues();
         } catch (error) {

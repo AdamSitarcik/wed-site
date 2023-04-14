@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import bodyParser from 'body-parser';
 
-import connectDB from './connectDb.js';
+import connectDB from './ConnectDb.js';
 import guestRouter from './Routes.js';
 
 app.use('/api', guestRouter);
