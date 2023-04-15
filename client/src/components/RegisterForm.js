@@ -1,4 +1,4 @@
-import Wrapper from '../assets/wrappers/RegisterForm';
+import Wrapper from '../assets/wrappers/RegisterSection';
 import { FormRow, FormArea, Alert } from '.';
 import { useAppContext } from '../context/appContext.js';
 
@@ -32,7 +32,7 @@ const RegisterForm = () => {
     };
 
     return (
-        <Wrapper>
+        <div>
             {showAlert && <Alert />}
             <form onSubmit={handleSubmit} className='form'>
                 <div className='form-container'>
@@ -70,7 +70,7 @@ const RegisterForm = () => {
                     </button>
                 </div>
             </form>
-        </Wrapper>
+        </div>
     );
 };
 

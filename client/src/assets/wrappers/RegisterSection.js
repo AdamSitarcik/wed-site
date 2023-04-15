@@ -10,6 +10,22 @@ const Wrapper = styled.aside`
         align-items: center;
     }
 
+    .form {
+        height: 40vh;
+        width: 50vw;
+        max-width: 400px;
+        min-width: 300px;
+        background-color: var(--background-color-info);
+        padding: 25px 0;
+        border-radius: var(--container-border-radius);
+        border: none;
+        box-shadow: var(--container-box-shadow);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .input {
         box-sizing: border-box;
         width: 100%;
@@ -52,6 +68,13 @@ const Wrapper = styled.aside`
 
     .input:focus {
         outline: none;
+    }
+
+    @media (max-width: 992px) {
+        .form {
+            height: 50vh;
+            max-width: 100%;
+        }
     }
 `;
 

@@ -23,13 +23,17 @@ const Wrapper = styled.aside`
         animation: move-chevron 6s ease-out infinite;
     }
 
-    @media (max-width: calc(650px + 15vw)) {
+    @media (max-width: 992px) {
+    /* @media (max-width: calc(650px + 15vw)) { */
         .scroll-container {
-            width: 10vw;
+            /* width: 10vw; */
+            width: 45px;
+            /* min-width: 50px; */
         }
 
         .chevron {
-            width: 10vw;
+            /* width: 10vw; */
+            width: 45px;
         }
     }
 

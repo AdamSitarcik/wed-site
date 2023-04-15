@@ -6,6 +6,7 @@ const Wrapper = styled.aside`
     }
 
     .toggle-btn {
+
         width: 75px;
         height: 75px;
         position: fixed;
@@ -14,7 +15,9 @@ const Wrapper = styled.aside`
         background: none;
         border: none;
         cursor: pointer;
-        font-size: calc(15px + 3vw);
+        font-size: clamp(25px,100vw, 35px);
+        z-index: 99;
+
     }
 
     .navbar-container {

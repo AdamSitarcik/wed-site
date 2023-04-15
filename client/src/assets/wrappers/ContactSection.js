@@ -6,9 +6,9 @@ const Wrapper = styled.aside`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        box-shadow: 0 0 20px 20px var(--background-color-info);
+        box-shadow: var(--container-box-shadow);
         background-color: var(--background-color-info);
-        border-radius: 10px;
+        border-radius: var(--container-border-radius);
     }
 
     .contacts-container {
@@ -36,6 +36,7 @@ const Wrapper = styled.aside`
     }
 
     .adress-container {
+        font-size: 1.2rem;
         width: 100%;
         display: flex;
         flex-direction: column;

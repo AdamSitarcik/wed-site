@@ -1,10 +1,14 @@
 import RegisterForm from '../components/RegisterForm';
+import Wrapper from '../assets/wrappers/RegisterSection';
 
-const Register = ({className}) => {
+const Register = ({ className }) => {
     return (
-        <section id='register' className={className}>
-            <RegisterForm />
-        </section>
+        <Wrapper>
+            <section id="register" className={className}>
+                <h1 className="section-title">Potvrdenie účasti</h1>
+                <RegisterForm />
+            </section>
+        </Wrapper>
     );
 };
 
