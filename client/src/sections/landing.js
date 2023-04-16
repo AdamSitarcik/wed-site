@@ -3,6 +3,7 @@ import { AiFillHeart } from 'react-icons/ai';
 import { ScrollButton, BigNavbar, SmallNavbar } from '../components';
 import { useAppContext } from '../context/appContext';
 import { Wrapper } from '../assets/wrappers/LandingSection';
+import { MapSymbol } from '../components';
 
 const Landing = ({ className }) => {
     const { sections } = useAppContext();
@@ -14,6 +15,7 @@ const Landing = ({ className }) => {
                     <BigNavbar />
                     <SmallNavbar />
                 </header>
+                {/* <span className="background-circle" /> */}
                 <div className="info-container">
                     <h2>27.5.2023 o 14:30</h2>
                     <div className="name-container">
@@ -23,12 +25,7 @@ const Landing = ({ className }) => {
                     </div>
                     <h2>
                         Veľký evanjelický kostol v Bratislave{' '}
-                        <a
-                            href="https://goo.gl/maps/kBfbPf4MD7F6x2aM8"
-                            className="react-icon"
-                        >
-                            <FaMapMarkerAlt />
-                        </a>
+                        <MapSymbol href="https://goo.gl/maps/kBfbPf4MD7F6x2aM8" />
                     </h2>
                 </div>
                 <ScrollButton whereTo={sections[0].navigate} />

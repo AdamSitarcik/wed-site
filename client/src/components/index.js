@@ -3,10 +3,13 @@ import SmallNavbar from './SmallNavbar.js';
 import FormRow from './FormRow';
 import ImageSlider from './ImageSlider';
 import NavLinks from './NavLinks.js';
-import ScrollButton from './ScollButton';
+import ScrollButton from './ScrollButton.js';
 import Logo from './Logo.js';
 import FormArea from './FormArea.js';
 import Alert from './Alert.js';
+import ContactInfo from './ContactInfo.js';
+import RegisterForm from './RegisterForm.js';
+import MapSymbol from './MapSymbol.js';
 
 export {
     BigNavbar,
@@ -18,4 +21,7 @@ export {
     Logo,
     FormArea,
     Alert,
+    ContactInfo,
+    RegisterForm,
+    MapSymbol,
 };

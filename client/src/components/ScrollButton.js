@@ -1,7 +1,7 @@
 import { Link } from 'react-scroll';
-import Wrapper from '../assets/wrappers/ScrollButton';
+import { Wrapper } from '../assets/wrappers/ScrollButton';
 
-const ScrollButton = ({whereTo}) => {
+const ScrollButton = ({ whereTo }) => {
     return (
         <Wrapper>
             <Link to={whereTo} smooth={true}>

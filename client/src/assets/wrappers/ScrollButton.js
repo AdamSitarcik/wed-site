@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.aside`
+export const Wrapper = styled.aside`
     .scroll-container {
         position: absolute;
         left: 50%;
@@ -87,5 +87,3 @@ const Wrapper = styled.aside`
         }
     }
 `;
-
-export default Wrapper;

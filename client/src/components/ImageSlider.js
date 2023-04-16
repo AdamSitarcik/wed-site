@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
-import Wrapper from '../assets/wrappers/ImageSlider';
+import { Wrapper } from '../assets/wrappers/ImageSlider';
 
 const ImageSlider = () => {
     const timerRef = useRef(null);

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.aside`
+export const Wrapper = styled.aside`
     .slider-container {
         display: flex;
         justify-content: center;
@@ -110,5 +110,3 @@ const Wrapper = styled.aside`
         }
     }
 `;
-
-export default Wrapper;

@@ -22,8 +22,8 @@
     --green-dark: #0f5132;
 
     --navbar-height: 7vh;
-    --section-height: 100vh;
     --bckg-img-max-width: 650px;
+    --bckg-img-min-width: 250px;
     --slide-width: 70vw;
     --slide-max-width: 800px;
     --slide-min-width: 200px;
@@ -31,7 +31,7 @@
     --slide-max-heigth: calc(var(--slide-max-width) * 9 / 16);
     --slide-min-heigth: 300px;
 
-    --container-border-radius: 10px;
+    --container-border-radius: 25px;
     --container-box-shadow: 0 0 20px 20px var(--background-color-info);
 
     --transition: 0.3s ease-in-out all;
@@ -50,7 +50,11 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: 650px;
+    background-size: var(--bckg-img-max-width);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    z-index: 1;
 }
 
 button {
@@ -80,14 +84,18 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 100vh;
-    max-height: var(--section-height);
+    min-height: 100px;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
 }
 
 .section-container.dark {
     background-color: var(--background-color-dark);
+}
+
+a{
+    color: black;
 }
 
 a:hover {
@@ -103,7 +111,7 @@ a:hover {
     font-family: var(--allura);
     position: absolute;
     left: 50%;
-    top: 10%;
+    top: 5%;
     transform: translate(-50%, 0);
     font-size: 4rem;
     margin: 0;
@@ -111,7 +119,7 @@ a:hover {
 
 @media (max-width: 992px) {
     body {
-        background-size: clamp(250px, 85vw, var(--bckg-img-max-width));
+        background-size: clamp(var(--bckg-img-min-width), 82vw, var(--bckg-img-max-width));
     }
 
     .heart-icon {
@@ -119,7 +127,7 @@ a:hover {
     }
 
     .section-title {
-        top: 5%;
+        top: 3vh;
         font-size: 2.5rem;
     }
 }

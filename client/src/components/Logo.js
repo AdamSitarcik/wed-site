@@ -1,5 +1,5 @@
 import { Link } from 'react-scroll';
-import Wrapper from '../assets/wrappers/Logo.js';
+import { Wrapper } from '../assets/wrappers/Logo.js';
 
 const Logo = ({ handleClick, showLogo }) => {
     return (

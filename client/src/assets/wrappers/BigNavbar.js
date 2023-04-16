@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const Wrapper = styled.aside`
+export const Wrapper = styled.aside`
     display: none;
     @media (min-width: 992px) {
         display: block;
@@ -61,5 +61,3 @@ const Wrapper = styled.aside`
         }
     }
 `;
-
-export default Wrapper;

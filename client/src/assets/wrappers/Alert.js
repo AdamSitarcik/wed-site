@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.aside`
+export const Wrapper = styled.aside`
     .alert {
         position: fixed;
         display: flex;
@@ -29,10 +29,8 @@ const Wrapper = styled.aside`
     }
 
     @media (max-width: 992px) {
-        .alert{
+        .alert {
             width: 80vw;
         }
     }
 `;
-
-export default Wrapper;

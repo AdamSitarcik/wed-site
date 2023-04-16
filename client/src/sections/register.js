@@ -1,5 +1,5 @@
-import RegisterForm from '../components/RegisterForm';
-import Wrapper from '../assets/wrappers/RegisterSection';
+import { RegisterForm } from '../components';
+import { Wrapper } from '../assets/wrappers/RegisterSection';
 
 const Register = ({ className }) => {
     return (

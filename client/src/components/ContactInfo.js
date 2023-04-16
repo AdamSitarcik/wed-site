@@ -1,6 +1,7 @@
-import { FiMail, FiPhone } from 'react-icons/fi';
+import { FiMail, FiPhone, FiFacebook } from 'react-icons/fi';
+import {BsFacebook} from 'react-icons/bs'
 
-const ContactInfo = ({ name, phone, email, align }) => {
+const ContactInfo = ({ name, phone, email, align, facebook }) => {
     return (
         <div className={`contact ${align}`}>
             <div>{name}</div>
@@ -9,6 +10,11 @@ const ContactInfo = ({ name, phone, email, align }) => {
             </div>
             <div>
                 <FiMail /> {email}
+            </div>
+            <div>
+                <a href={facebook}>
+                    <BsFacebook />
+                </a>
             </div>
         </div>
     );

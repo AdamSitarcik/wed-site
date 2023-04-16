@@ -1,4 +1,4 @@
-import Wrapper from '../assets/wrappers/TimelineSection';
+import { Wrapper } from '../assets/wrappers/TimelineSection';
 import { AiOutlineBell } from 'react-icons/ai';
 import { TbHeartHandshake, TbBus } from 'react-icons/tb';
 import { SiJusteat } from 'react-icons/si';
@@ -8,7 +8,7 @@ const Timeline = ({ className }) => {
     return (
         <Wrapper>
             <section id="timeline" className={className}>
-                <h1 className="section-title">Svadobný harmonogram</h1>
+                <h1 className="section-title">Náš deň</h1>
                 <div className="timeline-container">
                     <ul>
                         <li className="timeline-item">

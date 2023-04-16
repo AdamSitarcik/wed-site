@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.aside`
-    .timeline-container {
-        top: 5%;
-        width: 40vw;
+    .info-container {
+        margin-top: 20vh;
+        margin-bottom: 5vh;
+        width: 70vw;
         position: relative;
         background-color: var(--background-color-info);
         box-shadow: var(--container-box-shadow);
@@ -11,15 +12,8 @@ export const Wrapper = styled.aside`
         box-sizing: border-box;
     }
 
-    .timeline-container::before {
-        height: 80%;
-        top: 10%;
-        content: '';
-        position: absolute;
-        left: 32.5%;
-        transform: translate(-50%, 0);
-        border: 0;
-        box-shadow: 0 0 2px 2px var(--blue);
+    a {
+        color: black;
     }
 
     ul {
@@ -29,16 +23,31 @@ export const Wrapper = styled.aside`
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        gap: 30px;
+        align-items: center;
     }
 
-    .timeline-item {
+    .info-item {
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-bottom: 25px;
+        padding-bottom: 20px;
+    }
+
+    .item-title {
+        width: 20%;
+        font-size: 2rem;
+        text-align: end;
+    }
+
+    .item-description {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        text-align: start;
         font-size: 1.7rem;
-        height: 7vh;
+        width: 55%;
     }
 
     .icon {
@@ -57,35 +66,47 @@ export const Wrapper = styled.aside`
         border-radius: 50%;
     }
 
-    .item-description {
-        text-align: start;
-        width: 55%;
-    }
-
-    .time {
-        width: 20%;
-        text-align: end;
+    .react-icon {
+        font-size: 1.2rem;
     }
 
     @media (max-width: 992px) {
-        .timeline-container {
+        .info-container {
             margin-top: 15vh;
-            height: 70vh;
+            min-height: 70vh;
             width: 90%;
             max-width: 700px;
         }
 
-        .timeline-item {
+        .info-item {
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 15px;
             width: 100%;
             font-size: 1.5rem;
             padding-bottom: 25px;
         }
 
+        .item-title {
+            width: auto;
+        }
+
+        .item-description {
+            width: auto;
+            text-align: center;
+        }
+
         .icon {
+            position: relative;
+            left: 0;
+            transform: none;
             font-size: 1.5rem;
             width: 35px;
             height: 35px;
         }
+
+        .item-title {
+            text-align: center;
+        }
     }
 `;
-export default Wrapper;

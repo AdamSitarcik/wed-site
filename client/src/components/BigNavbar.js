@@ -1,4 +1,4 @@
-import Wrapper from '../assets/wrappers/BigNavbar.js';
+import { Wrapper } from '../assets/wrappers/BigNavbar.js';
 import { Link } from 'react-scroll';
 import Logo from './Logo.js';
 import { useAppContext } from '../context/appContext.js';

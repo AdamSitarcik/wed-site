@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.aside`
+export const Wrapper = styled.aside`
     .form-container {
         height: 100%;
         width: 80%;
@@ -77,5 +77,3 @@ const Wrapper = styled.aside`
         }
     }
 `;
-
-export default Wrapper;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.aside`
+export const Wrapper = styled.aside`
     .container {
         display: flex;
         flex-direction: column;
@@ -48,8 +48,9 @@ const Wrapper = styled.aside`
         display: none;
     }
 
-    .address-icon {
+    .react-icon {
         color: black;
+        font-size: 1rem;
     }
 
     @media (max-width: 992px) {
@@ -74,5 +75,3 @@ const Wrapper = styled.aside`
         }
     }
 `;
-
-export default Wrapper;

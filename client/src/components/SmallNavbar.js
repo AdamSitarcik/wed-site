@@ -1,5 +1,5 @@
 import { useAppContext } from '../context/appContext';
-import Wrapper from '../assets/wrappers/SmallNavbar.js';
+import { Wrapper } from '../assets/wrappers/SmallNavbar.js';
 import { NavLinks, Logo } from './';
 import { HiMenu } from 'react-icons/hi';
 

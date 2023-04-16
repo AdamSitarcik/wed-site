@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const Wrapper = styled.aside`
+export const Wrapper = styled.aside`
     .logo-container {
         height: 25vw;
         min-height: 100px;
@@ -10,7 +10,7 @@ const Wrapper = styled.aside`
         max-width: 135px;
     }
 
-    a{
+    a {
         display: block;
         height: 100%;
         width: 100%;
@@ -24,5 +24,3 @@ const Wrapper = styled.aside`
         cursor: pointer;
     }
 `;
-
-export default Wrapper;

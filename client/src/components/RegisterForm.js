@@ -1,4 +1,3 @@
-import Wrapper from '../assets/wrappers/RegisterSection';
 import { FormRow, FormArea, Alert } from '.';
 import { useAppContext } from '../context/appContext.js';
 
@@ -34,36 +33,36 @@ const RegisterForm = () => {
     return (
         <div>
             {showAlert && <Alert />}
-            <form onSubmit={handleSubmit} className='form'>
-                <div className='form-container'>
+            <form onSubmit={handleSubmit} className="form">
+                <div className="form-container">
                     <FormRow
-                        type='text'
-                        name='firstName'
-                        labelText='Meno'
+                        type="text"
+                        name="firstName"
+                        labelText="Meno"
                         value={firstName}
                         handleChange={handleChangeHelper}
-                        className='first-name input'
+                        className="first-name input"
                     />
 
                     <FormRow
-                        type='text'
-                        name='lastName'
-                        labelText='Priezvisko'
+                        type="text"
+                        name="lastName"
+                        labelText="Priezvisko"
                         value={lastName}
                         handleChange={handleChangeHelper}
-                        className='last-name input'
+                        className="last-name input"
                     />
                     <FormArea
-                        name='message'
+                        name="message"
                         value={message}
-                        labelText='Poznámka'
+                        labelText="Poznámka"
                         handleChange={handleChangeHelper}
-                        placeholder='Intolerancie, vegetariánske menu, detská stolička alebo iné špeciálne požiadavky :)'
-                        className='text-area input'
+                        placeholder="Intolerancie, vegetariánske menu, detská stolička alebo iné špeciálne požiadavky :)"
+                        className="text-area input"
                     />
                     <button
-                        type='submit'
-                        className='submit-btn'
+                        type="submit"
+                        className="submit-btn"
                         disabled={isLoading}
                     >
                         Potvrdiť účasť
