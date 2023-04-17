@@ -1,4 +1,12 @@
-const FormRow = ({ type, name, value, handleChange, labelText, className, placeholder }) => {
+const OtherGuest = ({
+    type,
+    name,
+    value,
+    handleChange,
+    labelText,
+    className,
+    placeholder,
+}) => {
     return (
         <div className="form-row">
             <label htmlFor={name} className="form-label">
@@ -17,4 +25,4 @@ const FormRow = ({ type, name, value, handleChange, labelText, className, placeh
     );
 };
 
-export default FormRow;
+export default OtherGuest;

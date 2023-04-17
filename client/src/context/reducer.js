@@ -7,9 +7,14 @@ import {
     ERROR_REGISTER_USER,
     CLEAR_VALUES,
     HANDLE_CHANGE,
+    HANDLE_CHANGE_OTHERS,
+    ADD_OTHER_GUEST,
+    DELETE_OTHER_GUEST,
 } from './actions';
 
 const reducer = (state, action) => {
+    const { otherGuestNumber, otherGuestNames } = state;
+
     switch (action.type) {
         case TOGGLE_NAVBAR:
             return { ...state, showSmallNavbar: !state.showSmallNavbar };
@@ -56,6 +61,16 @@ const reducer = (state, action) => {
                 alertText: 'Ajaj, niečo sa stalo!',
                 alertType: 'danger',
             };
+
+        case ADD_OTHER_GUEST:
+            return {
+                ...state,
+                otherGuestNumber: otherGuestNumber + 1,
+                otherGuestNames: otherGuestNames.concat([{ name: '' }]),
+            };
+
+        case DELETE_OTHER_GUEST:
+            return { ...state, otherGuestNumber: otherGuestNumber - 1 };
 
         default:
             throw new Error(`No such action ${action.type}`);

@@ -4,9 +4,16 @@ import { ScrollButton, BigNavbar, SmallNavbar } from '../components';
 import { useAppContext } from '../context/appContext';
 import { Wrapper } from '../assets/wrappers/LandingSection';
 import { MapSymbol } from '../components';
+import { useState, useEffect } from 'react';
 
 const Landing = ({ className }) => {
     const { sections } = useAppContext();
+    const [showFrame, setShowFrame] = useState(true);
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            setShowFrame(!window.scrollY > 0);
+        });
+    }, []);
 
     return (
         <Wrapper>
@@ -16,7 +23,7 @@ const Landing = ({ className }) => {
                     <SmallNavbar />
                 </header>
                 {/* <span className="background-circle" /> */}
-                <div className="info-container">
+                <div className={showFrame ? 'show-frame info-container' : 'info-container'}>
                     <h2>27.5.2023 o 14:30</h2>
                     <div className="name-container">
                         <h1>Diana</h1>

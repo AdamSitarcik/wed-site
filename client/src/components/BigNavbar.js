@@ -9,7 +9,7 @@ const Navbar = () => {
     const [showLogo, setShowLogo] = useState(false);
     useEffect(() => {
         window.addEventListener('scroll', () => {
-            setShowLogo(window.scrollY > 150);
+            setShowLogo(window.scrollY > 0);
         });
     }, []);
 

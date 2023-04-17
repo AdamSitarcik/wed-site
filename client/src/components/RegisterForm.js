@@ -1,4 +1,4 @@
-import { FormRow, FormArea, Alert } from '.';
+import { FormRow, FormArea, Alert, OtherGuest } from '.';
 import { useAppContext } from '../context/appContext.js';
 
 const RegisterForm = () => {
@@ -7,15 +7,24 @@ const RegisterForm = () => {
         showAlert,
         displayAlert,
         handleChange,
+        handleChangeOthers,
         isLoading,
         firstName,
         lastName,
         message,
+        otherGuestNumber,
+        otherGuestNames,
+        addOtherGuest,
+        deleteOtherGuest,
     } = useAppContext();
 
     const handleChangeHelper = (e) => {
         handleChange({ name: e.target.name, value: e.target.value });
     };
+
+    const handleChangeOthersHelper = (e, index) => {
+        
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,49 +34,88 @@ const RegisterForm = () => {
             return;
         }
 
-        const currentGuest = { firstName, lastName, message };
+        const currentGuest = {
+            firstName,
+            lastName,
+            message,
+            otherGuestNumber,
+            otherGuestNames,
+        };
 
         registerGuest({ currentGuest });
     };
 
     return (
-        <div>
+        <div className="form-container">
             {showAlert && <Alert />}
             <form onSubmit={handleSubmit} className="form">
-                <div className="form-container">
-                    <FormRow
-                        type="text"
-                        name="firstName"
-                        labelText="Meno"
-                        value={firstName}
-                        handleChange={handleChangeHelper}
-                        className="first-name input"
-                    />
+                <FormRow
+                    type="text"
+                    name="firstName"
+                    labelText="Meno"
+                    value={firstName}
+                    handleChange={handleChangeHelper}
+                    className="first-name input"
+                />
 
-                    <FormRow
-                        type="text"
-                        name="lastName"
-                        labelText="Priezvisko"
-                        value={lastName}
-                        handleChange={handleChangeHelper}
-                        className="last-name input"
-                    />
-                    <FormArea
-                        name="message"
-                        value={message}
-                        labelText="Poznámka"
-                        handleChange={handleChangeHelper}
-                        placeholder="Intolerancie, vegetariánske menu, detská stolička alebo iné špeciálne požiadavky :)"
-                        className="text-area input"
-                    />
-                    <button
-                        type="submit"
-                        className="submit-btn"
-                        disabled={isLoading}
-                    >
-                        Potvrdiť účasť
-                    </button>
-                </div>
+                <FormRow
+                    type="text"
+                    name="lastName"
+                    labelText="Priezvisko"
+                    value={lastName}
+                    handleChange={handleChangeHelper}
+                    className="last-name input"
+                />
+                <FormArea
+                    name="message"
+                    value={message}
+                    labelText="Poznámka"
+                    handleChange={handleChangeHelper}
+                    placeholder="Intolerancie, vegetariánske menu, detská stolička alebo iné špeciálne požiadavky :)"
+                    className="text-area input"
+                />
+
+                {otherGuestNumber > 0 && (
+                    <div className="other-guests-container">
+                        <label>Ďalší hostia</label>
+                        {otherGuestNames.map((otherGuest, index) => {
+                            return (
+                                <OtherGuest
+                                    key={index}
+                                    type="text"
+                                    name={otherGuest.name}
+                                    value={otherGuest.name}
+                                    placeholder="Meno a priezvisko"
+                                    className="other-guest input"
+                                    // handleChange={handleChangeHelper}
+                                />
+                            );
+                        })}
+                        <button
+                            type="button"
+                            onClick={deleteOtherGuest}
+                            className="delete-guest-btn"
+                        >
+                            Odstrániť
+                        </button>
+                    </div>
+                )}
+
+                <button
+                    type="button"
+                    onClick={addOtherGuest}
+                    className="add-guest-btn"
+                >
+                    Pridať hosťa
+                </button>
+
+                <button
+                    type="submit"
+                    className="submit-btn"
+                    disabled={isLoading}
+                >
+                    Potvrdiť účasť
+                </button>
             </form>
         </div>
     );

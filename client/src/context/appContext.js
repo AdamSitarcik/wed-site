@@ -10,6 +10,9 @@ import {
     ERROR_REGISTER_USER,
     CLEAR_VALUES,
     HANDLE_CHANGE,
+    HANDLE_CHANGE_OTHERS,
+    ADD_OTHER_GUEST,
+    DELETE_OTHER_GUEST,
 } from './actions';
 
 const initialState = {
@@ -28,14 +31,14 @@ const initialState = {
     firstName: '',
     lastName: '',
     message: '',
+    otherGuestNumber: 0,
+    otherGuestNames: [],
 };
 
 const AppContext = createContext(initialState);
 
 const AppProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
-
-    // const fetch = axios.create({ baseURL: '/api' });
 
     const displayAlert = () => {
         dispatch({ type: DISPLAY_ALERT });
@@ -58,6 +61,31 @@ const AppProvider = ({ children }) => {
 
     const handleChange = ({ name, value }) => {
         dispatch({ type: HANDLE_CHANGE, payload: { name, value } });
+    };
+
+    const handleChangeOthers = ({ name, value, index }) => {
+        dispatch({
+            type: HANDLE_CHANGE_OTHERS,
+            payload: { name, value, index },
+        });
+    };
+
+    const addOtherGuest = () => {
+        const { otherGuestNumber, otherGuestNames } = state;
+        if (otherGuestNumber >= 0 && otherGuestNumber <= 7) {
+            // otherGuestNames.concat([{ name: '' }]);
+            dispatch({
+                type: ADD_OTHER_GUEST,
+            });
+        }
+    };
+
+    const deleteOtherGuest = () => {
+        const { otherGuestNumber, otherGuestNames } = state;
+        if (otherGuestNumber >= 1) {
+            otherGuestNames.pop();
+            dispatch({ type: DELETE_OTHER_GUEST });
+        }
     };
 
     const registerGuest = async ({ currentGuest }) => {
@@ -84,6 +112,9 @@ const AppProvider = ({ children }) => {
                 clearAlert,
                 clearValues,
                 handleChange,
+                addOtherGuest,
+                deleteOtherGuest,
+                handleChangeOthers,
             }}
         >
             {children}
