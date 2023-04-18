@@ -14,7 +14,7 @@ export const Wrapper = styled.aside`
         margin: 0;
     }
 
-    .background-circle {
+    /* .background-circle {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -23,7 +23,7 @@ export const Wrapper = styled.aside`
         height: calc(var(--bckg-img-max-width) * 1.1);
         background-color: var(--background-color-info);
         border-radius: 50%;
-    }
+    } */
 
     .info-container {
         position: absolute;
@@ -35,7 +35,7 @@ export const Wrapper = styled.aside`
         background-color: none;
         justify-content: space-between;
         border-radius: var(--container-border-radius);
-        transition: box-shadow 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
         height: 65vh;
         padding: 20px;
         width: 650px;

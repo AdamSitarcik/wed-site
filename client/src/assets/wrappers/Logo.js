@@ -10,6 +10,7 @@ export const Wrapper = styled.aside`
         width: 22vw;
         min-width: 80px;
         max-width: 110px;
+        z-index: 99;
     }
 
     a {

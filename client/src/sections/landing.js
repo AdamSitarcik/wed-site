@@ -1,4 +1,3 @@
-import { FaMapMarkerAlt } from 'react-icons/fa';
 import { AiFillHeart } from 'react-icons/ai';
 import { ScrollButton, BigNavbar, SmallNavbar } from '../components';
 import { useAppContext } from '../context/appContext';
