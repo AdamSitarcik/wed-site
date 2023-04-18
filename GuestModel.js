@@ -14,6 +14,19 @@ const GuestSchema = new mongoose.Schema({
     message: {
         type: String,
     },
+    otherGuestNames: [
+        {
+            name: {
+                type: String,
+                maxlength: 50,
+            },
+        },
+    ],
+    otherGuestNumber: {
+        type: Number,
+        min: 0,
+        max: 7,
+    },
 });
 
 export default mongoose.model('Guest', GuestSchema);

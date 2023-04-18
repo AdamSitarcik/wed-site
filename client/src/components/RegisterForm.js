@@ -23,8 +23,10 @@ const RegisterForm = () => {
     };
 
     const handleChangeOthersHelper = (e, index) => {
-        
-    }
+        let guests = [...otherGuestNames];
+        guests[index][e.target.name] = e.target.value;
+        handleChangeOthers({ guests });
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -46,72 +48,70 @@ const RegisterForm = () => {
     };
 
     return (
-        <div className="form-container">
+        <div className='form-container'>
             {showAlert && <Alert />}
-            <form onSubmit={handleSubmit} className="form">
+            <form onSubmit={handleSubmit} className='form'>
                 <FormRow
-                    type="text"
-                    name="firstName"
-                    labelText="Meno"
+                    type='text'
+                    name='firstName'
+                    labelText='Meno'
                     value={firstName}
                     handleChange={handleChangeHelper}
-                    className="first-name input"
+                    className='first-name input'
                 />
 
                 <FormRow
-                    type="text"
-                    name="lastName"
-                    labelText="Priezvisko"
+                    type='text'
+                    name='lastName'
+                    labelText='Priezvisko'
                     value={lastName}
                     handleChange={handleChangeHelper}
-                    className="last-name input"
+                    className='last-name input'
                 />
                 <FormArea
-                    name="message"
+                    name='message'
                     value={message}
-                    labelText="Poznámka"
+                    labelText='Poznámka'
                     handleChange={handleChangeHelper}
-                    placeholder="Intolerancie, vegetariánske menu, detská stolička alebo iné špeciálne požiadavky :)"
-                    className="text-area input"
+                    placeholder='Intolerancie, vegetariánske menu, detská stolička alebo iné špeciálne požiadavky :)'
+                    className='text-area input'
                 />
 
                 {otherGuestNumber > 0 && (
-                    <div className="other-guests-container">
+                    <div className='other-guests-container'>
                         <label>Ďalší hostia</label>
                         {otherGuestNames.map((otherGuest, index) => {
                             return (
                                 <OtherGuest
                                     key={index}
-                                    type="text"
-                                    name={otherGuest.name}
+                                    type='text'
+                                    name='name'
                                     value={otherGuest.name}
-                                    placeholder="Meno a priezvisko"
-                                    className="other-guest input"
-                                    // handleChange={handleChangeHelper}
+                                    placeholder='Meno a priezvisko'
+                                    className='other-guest input'
+                                    handleChange={(e) =>
+                                        handleChangeOthersHelper(e, index)
+                                    }
+                                    onDeleteClick={() =>
+                                        deleteOtherGuest(index)
+                                    }
                                 />
                             );
                         })}
-                        <button
-                            type="button"
-                            onClick={deleteOtherGuest}
-                            className="delete-guest-btn"
-                        >
-                            Odstrániť
-                        </button>
                     </div>
                 )}
 
                 <button
-                    type="button"
+                    type='button'
                     onClick={addOtherGuest}
-                    className="add-guest-btn"
+                    className='add-guest-btn'
                 >
                     Pridať hosťa
                 </button>
 
                 <button
-                    type="submit"
-                    className="submit-btn"
+                    type='submit'
+                    className='submit-btn'
                     disabled={isLoading}
                 >
                     Potvrdiť účasť

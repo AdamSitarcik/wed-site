@@ -35,11 +35,16 @@ const reducer = (state, action) => {
                 firstName: '',
                 lastName: '',
                 message: '',
+                otherGuestNames: [],
+                otherGuestNumber: 0,
             };
             return { ...state, ...initialState };
 
         case HANDLE_CHANGE:
             return { ...state, [action.payload.name]: action.payload.value };
+
+        case HANDLE_CHANGE_OTHERS:
+            return { ...state, otherGuestNames: [...action.payload.guests] };
 
         case BEGIN_REGISTER_USER:
             return { ...state, isLoading: true };
@@ -65,8 +70,8 @@ const reducer = (state, action) => {
         case ADD_OTHER_GUEST:
             return {
                 ...state,
-                otherGuestNumber: otherGuestNumber + 1,
                 otherGuestNames: otherGuestNames.concat([{ name: '' }]),
+                otherGuestNumber: otherGuestNumber + 1,
             };
 
         case DELETE_OTHER_GUEST:

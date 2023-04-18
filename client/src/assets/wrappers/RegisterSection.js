@@ -32,7 +32,6 @@ export const Wrapper = styled.aside`
     .input {
         box-sizing: border-box;
         width: 100%;
-        margin-top: 5px;
         padding: 5px 5px;
         border-radius: 5px;
         border: 2px;
@@ -52,17 +51,39 @@ export const Wrapper = styled.aside`
         margin-bottom: 15px;
     }
 
-    .add-guest-btn,
-    .delete-guest-btn {
+    .input-row {
+        margin-top: 5px;
+        height: 100%;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .add-guest-btn {
         width: 50%;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         border: 2px var(--dark-grey);
         border-style: solid;
     }
 
-    .add-guest-btn:hover,
-    .delete-guest-btn:hover {
+    .delete-guest-btn {
+        width: 40px;
+        height: 100%;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        color: gray;
+    }
+
+    .add-guest-btn:hover {
         box-shadow: 0 0 5px 2px var(--dark-grey);
+    }
+
+    .delete-guest-btn:hover {
+        background-color: var(--red-light);
+        color: black;
     }
 
     .submit-btn {

@@ -31,8 +31,8 @@ const initialState = {
     firstName: '',
     lastName: '',
     message: '',
-    otherGuestNumber: 0,
     otherGuestNames: [],
+    otherGuestNumber: 0,
 };
 
 const AppContext = createContext(initialState);
@@ -63,27 +63,26 @@ const AppProvider = ({ children }) => {
         dispatch({ type: HANDLE_CHANGE, payload: { name, value } });
     };
 
-    const handleChangeOthers = ({ name, value, index }) => {
+    const handleChangeOthers = ({ guests }) => {
         dispatch({
             type: HANDLE_CHANGE_OTHERS,
-            payload: { name, value, index },
+            payload: { guests },
         });
     };
 
     const addOtherGuest = () => {
-        const { otherGuestNumber, otherGuestNames } = state;
+        const { otherGuestNumber } = state;
         if (otherGuestNumber >= 0 && otherGuestNumber <= 7) {
-            // otherGuestNames.concat([{ name: '' }]);
             dispatch({
                 type: ADD_OTHER_GUEST,
             });
         }
     };
 
-    const deleteOtherGuest = () => {
+    const deleteOtherGuest = (index) => {
         const { otherGuestNumber, otherGuestNames } = state;
         if (otherGuestNumber >= 1) {
-            otherGuestNames.pop();
+            otherGuestNames.splice(index, 1);
             dispatch({ type: DELETE_OTHER_GUEST });
         }
     };
