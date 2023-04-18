@@ -11,6 +11,7 @@ import ContactInfo from './ContactInfo.js';
 import RegisterForm from './RegisterForm.js';
 import MapSymbol from './MapSymbol.js';
 import OtherGuest from './OtherGuest.js';
+import InfoItem from './InfoItem.js';
 
 export {
     BigNavbar,
@@ -26,4 +27,5 @@ export {
     RegisterForm,
     MapSymbol,
     OtherGuest,
+    InfoItem,
 };

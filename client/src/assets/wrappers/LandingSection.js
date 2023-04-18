@@ -32,6 +32,7 @@ export const Wrapper = styled.aside`
         transform: translate(-50%, -50%);
         display: flex;
         flex-direction: column;
+        background-color: none;
         justify-content: space-between;
         border-radius: var(--container-border-radius);
         transition: box-shadow 0.3s ease-in-out;
@@ -42,6 +43,7 @@ export const Wrapper = styled.aside`
 
     .show-frame {
         box-shadow: 0 0 10px 10px var(--background-color-dark);
+        background-color: var(--background-color-info);
     }
 
     .name-container {
