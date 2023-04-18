@@ -18,7 +18,7 @@ const Info = ({ className }) => {
                             title='Miesto'
                             icon={<BsPinMap />}
                             description={
-                                <div>
+                                <div className='item-description'>
                                     <div>
                                         Obrad -{' '}
                                         <a href='https://goo.gl/maps/Vup4UWcADFgqqyZV8'>
@@ -40,7 +40,7 @@ const Info = ({ className }) => {
                             title='Dary'
                             icon={<AiOutlineGift />}
                             description={
-                                <div>
+                                <div className='item-description'>
                                     Máme všetky paplóny, hrnce a dokonca aj
                                     príbory. Viac nás poteší, ak prispejete
                                     finančne, na naše cestovanie či iné zážitky
@@ -52,7 +52,7 @@ const Info = ({ className }) => {
                             title='Kvety'
                             icon={<BsFlower3 />}
                             description={
-                                <div>
+                                <div className='item-description'>
                                     {' '}
                                     Sme eko, tak prosíme bez kvetov 😉. Ak to
                                     ale inak nejde, tak v budúcnosti po svadbe
@@ -65,7 +65,7 @@ const Info = ({ className }) => {
                             title='Parkovanie'
                             icon={<CiParking1 />}
                             description={
-                                <div>
+                                <div className='item-description'>
                                     <div>
                                         <a href='https://goo.gl/maps/fxL3gzu2JAmHhhAi6'>
                                             Parkovisko pri kostole
@@ -79,7 +79,7 @@ const Info = ({ className }) => {
                             title='Doprava'
                             icon={<MdOutlineEmojiTransportation />}
                             description={
-                                <div>
+                                <div className='item-description'>
                                     <div>
                                         Na odvoz od kostola bude zabezpečený
                                         autobus
@@ -98,9 +98,11 @@ const Info = ({ className }) => {
                             title='Ubytovanie'
                             icon={<BiHotel />}
                             description={
-                                <Link to='contact' smooth={true}>
-                                    Ak je potrebné, dajte nám vedieť 🙂
-                                </Link>
+                                <div className='item-description'>
+                                    <Link to='contact' smooth={true}>
+                                        Ak je potrebné, dajte nám vedieť 🙂
+                                    </Link>
+                                </div>
                             }
                         />
                     </ul>

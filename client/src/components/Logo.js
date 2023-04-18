@@ -17,7 +17,8 @@ const Logo = ({ handleClick, showLogo }) => {
                     smooth={true}
                     onClick={handleClick}
                 >
-                    <img src="../logo_black.svg" alt="logo" />
+                    <img src="../logo_black_v2.svg" alt="logo" />
+                    {/* D&A */}
                 </Link>
             </div>
         </Wrapper>

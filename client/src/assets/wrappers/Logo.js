@@ -2,12 +2,14 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.aside`
     .logo-container {
-        height: 25vw;
-        min-height: 100px;
-        max-height: 135px;
-        width: 25vw;
-        min-width: 100px;
-        max-width: 135px;
+        font-family: var(--allura);
+        /* font-size: 3rem; */
+        height: 22vw;
+        min-height: 80px;
+        max-height: 110px;
+        width: 22vw;
+        min-width: 80px;
+        max-width: 110px;
     }
 
     a {

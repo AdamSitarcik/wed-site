@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.aside`
+    .section-container {
+        justify-content: start;
+    }
+
     .form-container {
+        margin-top: 25vh;
         min-height: 40vh;
         width: 50vw;
         max-width: 400px;
@@ -81,6 +86,11 @@ export const Wrapper = styled.aside`
         box-shadow: 0 0 5px 2px var(--dark-grey);
     }
 
+    .add-guest-btn:disabled {
+        cursor: default;
+        box-shadow: none;
+    }
+
     .delete-guest-btn:hover {
         background-color: var(--red-light);
         color: black;
@@ -110,8 +120,10 @@ export const Wrapper = styled.aside`
     }
 
     @media (max-width: 992px) {
+
         .form-container {
-            height: 50vh;
+            min-height: 50vh;
+            margin-top: 15vh;
             max-width: 100%;
         }
     }

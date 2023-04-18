@@ -105,6 +105,7 @@ const RegisterForm = () => {
                     type='button'
                     onClick={addOtherGuest}
                     className='add-guest-btn'
+                    disabled={otherGuestNumber >=7}
                 >
                     Pridať hosťa
                 </button>

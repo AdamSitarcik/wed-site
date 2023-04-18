@@ -32,21 +32,21 @@ export const Wrapper = styled.aside`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-bottom: 20px;
+        gap: 15px;
     }
 
     .item-title {
         width: 20%;
-        font-size: 2rem;
+        font-size: 1.5rem;
         text-align: end;
     }
 
     .item-description {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
         text-align: start;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         width: 55%;
     }
 
