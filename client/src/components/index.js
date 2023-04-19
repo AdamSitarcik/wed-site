@@ -12,6 +12,7 @@ import RegisterForm from './RegisterForm.js';
 import MapSymbol from './MapSymbol.js';
 import OtherGuest from './OtherGuest.js';
 import InfoItem from './InfoItem.js';
+import Countdown from './Countdown.js';
 
 export {
     BigNavbar,
@@ -28,4 +29,5 @@ export {
     MapSymbol,
     OtherGuest,
     InfoItem,
+    Countdown,
 };

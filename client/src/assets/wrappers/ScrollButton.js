@@ -10,31 +10,17 @@ export const Wrapper = styled.aside`
         justify-content: center;
         align-items: center;
         width: 50px;
-        height: 75px;
+        height: 50px;
     }
 
     .chevron {
         position: absolute;
-        bottom: 50px;
-        width: 40px;
+        bottom: 35px;
+        width: 30px;
         height: 3px;
         opacity: 0;
         transform: scale(0.3);
         animation: move-chevron 6s ease-out infinite;
-    }
-
-    @media (max-width: 992px) {
-    /* @media (max-width: calc(650px + 15vw)) { */
-        .scroll-container {
-            /* width: 10vw; */
-            width: 45px;
-            /* min-width: 50px; */
-        }
-
-        .chevron {
-            /* width: 10vw; */
-            width: 45px;
-        }
     }
 
     .chevron:first-child {
@@ -64,6 +50,23 @@ export const Wrapper = styled.aside`
         right: 0;
         width: 50%;
         transform: skewY(-30deg);
+    }
+
+    @media (max-width: 992px) {
+        .scroll-container {
+            width: 45px;
+        }
+
+        .chevron {
+            width: 30px;
+            bottom: 35px;
+        }
+    }
+
+    @media (max-height: 800px) {
+        .scroll-container {
+            height: 30px;
+        }
     }
 
     @keyframes move-chevron {

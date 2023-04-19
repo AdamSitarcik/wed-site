@@ -1,5 +1,5 @@
 import { AiFillHeart } from 'react-icons/ai';
-import { ScrollButton, BigNavbar, SmallNavbar } from '../components';
+import { ScrollButton, BigNavbar, SmallNavbar, Countdown } from '../components';
 import { useAppContext } from '../context/appContext';
 import { Wrapper } from '../assets/wrappers/LandingSection';
 import { MapSymbol } from '../components';
@@ -21,7 +21,6 @@ const Landing = ({ className }) => {
                     <BigNavbar />
                     <SmallNavbar />
                 </header>
-                {/* <span className="background-circle" /> */}
                 <div className={showFrame ? 'show-frame info-container' : 'info-container'}>
                     <h2>27.5.2023 o 14:30</h2>
                     <div className="name-container">
@@ -34,6 +33,7 @@ const Landing = ({ className }) => {
                         <MapSymbol href="https://goo.gl/maps/kBfbPf4MD7F6x2aM8" />
                     </h2>
                 </div>
+                <Countdown />
                 <ScrollButton whereTo={sections[0].navigate} />
             </section>
         </Wrapper>

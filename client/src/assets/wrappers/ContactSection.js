@@ -14,7 +14,7 @@ export const Wrapper = styled.aside`
     .contacts-container {
         padding: 40px 20px;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         gap: 50px;
     }
@@ -24,7 +24,6 @@ export const Wrapper = styled.aside`
         flex-direction: column;
         justify-content: center;
         font-size: 1.5rem;
-        max-height: 50vh;
     }
 
     .right {
@@ -56,8 +55,11 @@ export const Wrapper = styled.aside`
     @media (max-width: 992px) {
         .contacts-container {
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            height: 50vh;
+            padding: 0;
+            gap: 0;
         }
 
         .left,
@@ -72,6 +74,10 @@ export const Wrapper = styled.aside`
             background-color: var(--background-color-dark-non-transparent);
             border-radius: 15px;
             box-shadow: 0 0 1px 1px var(--background-color-dark-non-transparent);
+        }
+
+        .contact {
+            font-size: 1.3rem;
         }
     }
 `;

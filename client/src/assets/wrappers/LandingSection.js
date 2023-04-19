@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.aside`
     h1 {
-        font-size: 5rem;
+        font-size: clamp(3rem, 5rem, 5rem);
     }
     h2 {
         font-size: 3.5rem;
@@ -14,20 +14,9 @@ export const Wrapper = styled.aside`
         margin: 0;
     }
 
-    /* .background-circle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: calc(var(--bckg-img-max-width) * 1.1);
-        height: calc(var(--bckg-img-max-width) * 1.1);
-        background-color: var(--background-color-info);
-        border-radius: 50%;
-    } */
-
     .info-container {
         position: absolute;
-        top: 50%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
         display: flex;
@@ -36,7 +25,7 @@ export const Wrapper = styled.aside`
         justify-content: space-between;
         border-radius: var(--container-border-radius);
         transition: all 0.3s ease-in-out;
-        height: 65vh;
+        height: 60vh;
         padding: 20px;
         width: 650px;
     }
@@ -54,20 +43,8 @@ export const Wrapper = styled.aside`
         align-items: center;
     }
 
-    @media (max-width: 992px) {
-        .background-circle {
-            width: clamp(
-                calc(var(--bckg-img-min-width) * 1.1),
-                91vw,
-                calc(var(--bckg-img-max-width) * 1.1)
-            );
-            height: clamp(
-                calc(var(--bckg-img-min-width) * 1.1),
-                91vw,
-                calc(var(--bckg-img-max-width) * 1.1)
-            );
-        }
 
+    @media (max-width: 992px) {
         .info-container {
             width: clamp(
                 var(--bckg-img-min-width),
@@ -82,6 +59,26 @@ export const Wrapper = styled.aside`
 
         h2 {
             font-size: clamp(2.45rem, 6vw, 3.5rem);
+        }
+    }
+
+    @media (max-height: 650px) {
+        .name-container {
+            flex-direction: row;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        h1 {
+            font-size: 7vh;
+        }
+
+        h2 {
+            font-size: 5vh;
+        }
+
+        .info-container {
+            height: 50vh;
         }
     }
 `;
