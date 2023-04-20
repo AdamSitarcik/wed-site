@@ -1,31 +1,67 @@
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { Wrapper } from '../assets/wrappers/ImageSlider';
+import { CSSTransition } from 'react-transition-group';
 
 const ImageSlider = () => {
     const timerRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [showSlide, setShowSlide] = useState(true);
+    const [showSecondarySlide, setShowSecondarySlide] = useState(true);
+    const [nextSlide, setNextSlide] = useState(true);
 
     const slides = useMemo(() => {
         return [
-            { url: '/slider-images/img-1.jpg' },
-            { url: '/slider-images/img-2.jpg' },
-            { url: '/slider-images/img-3.jpg' },
-            { url: '/slider-images/img-4.jpg' },
-            { url: '/slider-images/img-5.jpg' },
+            { url: '/slider-images/img1.jpg' },
+            { url: '/slider-images/img2.jpg' },
+            { url: '/slider-images/img3.jpg' },
+            { url: '/slider-images/img4.jpg' },
+            { url: '/slider-images/img5.jpg' },
+            { url: '/slider-images/img6.jpg' },
+            { url: '/slider-images/img7.jpg' },
+            { url: '/slider-images/img8.jpg' },
+            { url: '/slider-images/img9.jpg' },
+            { url: '/slider-images/img10.jpg' },
+            { url: '/slider-images/img11.jpg' },
         ];
     }, []);
 
-    const gotoPrev = useCallback(() => {
+    const prevSlideIndex = useCallback(() => {
         const isFirst = currentIndex === 0;
         const newIndex = isFirst ? slides.length - 1 : currentIndex - 1;
-        setCurrentIndex(newIndex);
+        return newIndex;
     }, [currentIndex, slides]);
 
-    const gotoNext = useCallback(() => {
+    const nextSlideIndex = useCallback(() => {
         const isLast = currentIndex === slides.length - 1;
         const newIndex = isLast ? 0 : currentIndex + 1;
-        setCurrentIndex(newIndex);
+        return newIndex;
     }, [currentIndex, slides]);
+
+    const gotoPrev = useCallback(() => {
+        setNextSlide(false);
+        setShowSlide(false);
+        setShowSecondarySlide(true);
+
+        setTimeout(() => {
+            setCurrentIndex(prevSlideIndex());
+            setTimeout(() => {
+                setShowSecondarySlide(false);
+            }, 100);
+        }, 1000);
+    }, [prevSlideIndex]);
+
+    const gotoNext = useCallback(() => {
+        setNextSlide(true);
+        setShowSlide(false);
+        setShowSecondarySlide(true);
+
+        setTimeout(() => {
+            setCurrentIndex(nextSlideIndex());
+            setTimeout(() => {
+                setShowSecondarySlide(false);
+            }, 100);
+        }, 1000);
+    }, [nextSlideIndex]);
 
     useEffect(() => {
         if (timerRef.current) {
@@ -34,7 +70,7 @@ const ImageSlider = () => {
 
         timerRef.current = setTimeout(() => {
             gotoNext();
-        }, 2000);
+        }, 5000);
 
         return () => clearTimeout(timerRef.current);
     }, [gotoNext]);
@@ -46,12 +82,41 @@ const ImageSlider = () => {
                     <div className="prev-arrow-container" onClick={gotoPrev}>
                         <div className="prev-arrow">⟨</div>
                     </div>
-                    <div
-                        className="slide"
-                        style={{
-                            backgroundImage: `url(${slides[currentIndex].url})`,
+                    <CSSTransition
+                        in={showSlide}
+                        timeout={1000}
+                        classNames="slide"
+                        unmountOnExit
+                        onExit={() => {
+                            setShowSecondarySlide(true);
                         }}
-                    ></div>
+                        onExited={() => {
+                            setShowSecondarySlide(false);
+                            setShowSlide(true);
+                        }}
+                    >
+                        <div
+                            className="slide"
+                            style={{
+                                backgroundImage: `url(${slides[currentIndex].url})`,
+                            }}
+                        ></div>
+                    </CSSTransition>
+
+                    {showSecondarySlide && (
+                        <div
+                            className="slide secondary"
+                            style={{
+                                backgroundImage: `url(${
+                                    slides[
+                                        nextSlide
+                                            ? nextSlideIndex()
+                                            : prevSlideIndex()
+                                    ].url
+                                })`,
+                            }}
+                        ></div>
+                    )}
                     <div className="next-arrow-container" onClick={gotoNext}>
                         <div className="next-arrow">⟩</div>
                     </div>

@@ -14,6 +14,7 @@ export const Wrapper = styled.aside`
 
     .slide-container {
         width: var(--slide-width);
+        width: 90vw;
         max-width: var(--slide-max-width);
         min-width: var(--slide-min-heigth);
         height: var(--slide-heigth);
@@ -24,6 +25,7 @@ export const Wrapper = styled.aside`
     }
 
     .slide {
+        position: absolute;
         width: 100%;
         min-width: var(--slide-min-heigth);
         max-width: var(--slide-max-width);
@@ -32,7 +34,11 @@ export const Wrapper = styled.aside`
         max-height: var(--slide-max-heigth);
         background-position: center;
         background-size: cover;
-        animation: zoomin 10s 1;
+        z-index: 2;
+    }
+
+    .secondary {
+        z-index: 1;
     }
 
     .prev-arrow-container,
@@ -41,7 +47,7 @@ export const Wrapper = styled.aside`
         height: 100%;
         width: 3.5vw;
         cursor: pointer;
-        z-index: 1;
+        z-index: 3;
     }
 
     .prev-arrow-container {
@@ -83,12 +89,32 @@ export const Wrapper = styled.aside`
         right: 1vw;
     }
 
+    .slide-exit {
+        opacity: 1;
+    }
+    
+    .slide-exit-active {
+        opacity: 0;
+        transition: opacity 1000ms;
+        transition-delay: 100ms;
+    }
+
     @keyframes zoomin {
         0% {
             -webkit-transform: scale(1);
         }
         100% {
             -webkit-transform: scale(1.3);
+        }
+    }
+
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
         }
     }
 
