@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
-import { Wrapper } from '../assets/wrappers/ImageSlider';
 import { CSSTransition } from 'react-transition-group';
 
 const ImageSlider = () => {
@@ -76,53 +75,52 @@ const ImageSlider = () => {
     }, [gotoNext]);
 
     return (
-        <Wrapper>
-            <div className="slider-container">
-                <div className="slide-container">
-                    <div className="prev-arrow-container" onClick={gotoPrev}>
-                        <div className="prev-arrow">⟨</div>
-                    </div>
-                    <CSSTransition
-                        in={showSlide}
-                        timeout={1000}
-                        classNames="slide"
-                        unmountOnExit
-                        onExit={() => {
-                            setShowSecondarySlide(true);
-                        }}
-                        onExited={() => {
-                            setShowSecondarySlide(false);
-                            setShowSlide(true);
-                        }}
-                    >
-                        <div
-                            className="slide"
-                            style={{
-                                backgroundImage: `url(${slides[currentIndex].url})`,
-                            }}
-                        ></div>
-                    </CSSTransition>
-
-                    {showSecondarySlide && (
-                        <div
-                            className="slide secondary"
-                            style={{
-                                backgroundImage: `url(${
-                                    slides[
-                                        nextSlide
-                                            ? nextSlideIndex()
-                                            : prevSlideIndex()
-                                    ].url
-                                })`,
-                            }}
-                        ></div>
-                    )}
-                    <div className="next-arrow-container" onClick={gotoNext}>
-                        <div className="next-arrow">⟩</div>
-                    </div>
+        <div className='slider-container'>
+            <div className='slide-container'>
+                <div className='prev-arrow-container' onClick={gotoPrev}>
+                    <div className='prev-arrow'>⟨</div>
                 </div>
+                <CSSTransition
+                    in={showSlide}
+                    timeout={1000}
+                    classNames='slide'
+                    unmountOnExit
+                    onExit={() => {
+                        setShowSecondarySlide(true);
+                    }}
+                    onExited={() => {
+                        setShowSecondarySlide(false);
+                        setShowSlide(true);
+                    }}
+                >
+                    <div
+                        className='slide'
+                        style={{
+                            backgroundImage: `url(${slides[currentIndex].url})`,
+                        }}
+                    ></div>
+                </CSSTransition>
+
+                {showSecondarySlide && (
+                    <div
+                        className='slide secondary'
+                        style={{
+                            backgroundImage: `url(${
+                                slides[
+                                    nextSlide
+                                        ? nextSlideIndex()
+                                        : prevSlideIndex()
+                                ].url
+                            })`,
+                        }}
+                    ></div>
+                )}
+                <div className='next-arrow-container' onClick={gotoNext}>
+                    <div className='next-arrow'>⟩</div>
+                </div>
+                <div className='frame'></div>
             </div>
-        </Wrapper>
+        </div>
     );
 };
 

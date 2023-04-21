@@ -13,10 +13,9 @@ export const Wrapper = styled.aside`
     }
 
     .slide-container {
-        width: var(--slide-width);
         width: 90vw;
-        max-width: var(--slide-max-width);
-        min-width: var(--slide-min-heigth);
+        /* max-width: var(--slide-max-width); */
+        /* min-width: var(--slide-min-heigth); */
         height: var(--slide-heigth);
         min-height: var(--slide-min-heigth);
         max-height: var(--slide-max-heigth);
@@ -27,11 +26,11 @@ export const Wrapper = styled.aside`
     .slide {
         position: absolute;
         width: 100%;
-        min-width: var(--slide-min-heigth);
-        max-width: var(--slide-max-width);
+        /* min-width: var(--slide-min-heigth); */
+        /* max-width: var(--slide-max-width); */
         height: 100%;
-        min-height: var(--slide-min-width);
-        max-height: var(--slide-max-heigth);
+        /* min-height: var(--slide-min-width); */
+        /* max-height: var(--slide-max-heigth); */
         background-position: center;
         background-size: cover;
         z-index: 2;
@@ -48,6 +47,9 @@ export const Wrapper = styled.aside`
         width: 3.5vw;
         cursor: pointer;
         z-index: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .prev-arrow-container {
@@ -60,25 +62,25 @@ export const Wrapper = styled.aside`
     }
 
     .prev-arrow-container:hover,
-    .next-arrow-container:hover {
+    .next-arrow-container:hover,
+    .prev-arrow-container:active,
+    .next-arrow-container:active {
         background-color: rgb(255, 255, 255, 0.3);
     }
 
-    .prev-arrow-container:hover {
-        /* border-radius: 20px 0 0 20px; */
-    }
+    .prev-arrow-container:active,
+    .next-arrow-container:active {
+        background-color: rgb(255, 255, 255, 0.3);
 
-    .next-arrow-container:hover {
-        /* border-radius: 0 20px 20px 0; */
     }
 
     .prev-arrow,
     .next-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translate(0, -50%);
+        color: var(--light-grey-transparent);
+        /* position: absolute; */
+        /* top: 50%; */
+        /* transform: translate(0, -50%); */
         font-size: 5vw;
-        color: white;
     }
 
     .prev-arrow {
@@ -92,30 +94,21 @@ export const Wrapper = styled.aside`
     .slide-exit {
         opacity: 1;
     }
-    
+
     .slide-exit-active {
         opacity: 0;
         transition: opacity 1000ms;
         transition-delay: 100ms;
     }
 
-    @keyframes zoomin {
-        0% {
-            -webkit-transform: scale(1);
-        }
-        100% {
-            -webkit-transform: scale(1.3);
-        }
-    }
-
-    @keyframes fadein {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
-        }
+    .frame {
+        top: -50vh;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 4;
+        background-image: url(frame_1.svg);
+        
     }
 
     @media (max-width: 650px) {

@@ -1,11 +1,14 @@
+import { Wrapper } from '../assets/wrappers/AboutUsSection';
 import ImageSlider from '../components/ImageSlider';
 
-const AboutUs = ({className}) => {
+const AboutUs = ({ className }) => {
     return (
-        <section id='about-us' className={className}>
-            <p>About us</p>
-            <ImageSlider />
-        </section>
+        <Wrapper>
+            <section id='about-us' className={className}>
+                <p>About us</p>
+                <ImageSlider />
+            </section>
+        </Wrapper>
     );
 };
 
