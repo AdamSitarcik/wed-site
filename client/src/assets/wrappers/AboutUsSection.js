@@ -7,18 +7,19 @@ export const Wrapper = styled.aside`
         align-items: center;
         background-color: var(--background-color-dark);
         width: 100vw;
-        height: calc(var(--slide-heigth) + 5vh);
-        max-height: calc(var(--slide-max-heigth) + 0vh);
-        min-height: calc(var(--slide-min-heigth) + 0vh);
+        height: 70vh;
+        /* max-height: calc(var(--slide-max-heigth) + 0vh); */
+        /* min-height: calc(var(--slide-min-heigth) + 0vh); */
     }
 
     .slide-container {
-        width: 90vw;
+        width: 70%;
         /* max-width: var(--slide-max-width); */
         /* min-width: var(--slide-min-heigth); */
-        height: var(--slide-heigth);
+        /* height: var(--slide-heigth);
         min-height: var(--slide-min-heigth);
-        max-height: var(--slide-max-heigth);
+        max-height: var(--slide-max-heigth); */
+        height: 95%;
         position: relative;
         border-radius: 20px;
     }
@@ -32,8 +33,10 @@ export const Wrapper = styled.aside`
         /* min-height: var(--slide-min-width); */
         /* max-height: var(--slide-max-heigth); */
         background-position: center;
-        background-size: cover;
+        /* background-size: cover; */
         z-index: 2;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 
     .secondary {
@@ -102,13 +105,17 @@ export const Wrapper = styled.aside`
     }
 
     .frame {
-        top: -50vh;
         position: absolute;
+        bottom: 0;
         width: 100%;
-        height: 100%;
+        height: auto;
         z-index: 4;
-        background-image: url(frame_1.svg);
+        background-size: 100% 100%;
         
+    }
+
+    img {
+        width: 100%;
     }
 
     @media (max-width: 650px) {

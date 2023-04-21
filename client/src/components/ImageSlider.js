@@ -75,15 +75,15 @@ const ImageSlider = () => {
     }, [gotoNext]);
 
     return (
-        <div className='slider-container'>
-            <div className='slide-container'>
-                <div className='prev-arrow-container' onClick={gotoPrev}>
-                    <div className='prev-arrow'>⟨</div>
+        <div className="slider-container">
+            <div className="slide-container">
+                <div className="prev-arrow-container" onClick={gotoPrev}>
+                    <div className="prev-arrow">⟨</div>
                 </div>
                 <CSSTransition
                     in={showSlide}
                     timeout={1000}
-                    classNames='slide'
+                    classNames="slide"
                     unmountOnExit
                     onExit={() => {
                         setShowSecondarySlide(true);
@@ -94,7 +94,7 @@ const ImageSlider = () => {
                     }}
                 >
                     <div
-                        className='slide'
+                        className="slide"
                         style={{
                             backgroundImage: `url(${slides[currentIndex].url})`,
                         }}
@@ -103,7 +103,7 @@ const ImageSlider = () => {
 
                 {showSecondarySlide && (
                     <div
-                        className='slide secondary'
+                        className="slide secondary"
                         style={{
                             backgroundImage: `url(${
                                 slides[
@@ -115,10 +115,12 @@ const ImageSlider = () => {
                         }}
                     ></div>
                 )}
-                <div className='next-arrow-container' onClick={gotoNext}>
-                    <div className='next-arrow'>⟩</div>
+                <div className="next-arrow-container" onClick={gotoNext}>
+                    <div className="next-arrow">⟩</div>
                 </div>
-                <div className='frame'></div>
+                <div className="frame">
+                    <img src="frame_1.svg" alt="" />
+                </div>
             </div>
         </div>
     );
