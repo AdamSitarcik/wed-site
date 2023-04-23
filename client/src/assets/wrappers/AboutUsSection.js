@@ -108,14 +108,15 @@ export const Wrapper = styled.aside`
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: auto;
-        z-index: 4;
+        height: 150px;
         background-size: 100% 100%;
-        
+        z-index: 4;
+        contain: strict;
     }
-
+    
     img {
-        width: 100%;
+        width: 500px;
+        height: 50px;
     }
 
     @media (max-width: 650px) {

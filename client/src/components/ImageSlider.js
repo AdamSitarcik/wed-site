@@ -118,9 +118,10 @@ const ImageSlider = () => {
                 <div className="next-arrow-container" onClick={gotoNext}>
                     <div className="next-arrow">⟩</div>
                 </div>
-                <div className="frame">
-                    <img src="frame_1.svg" alt="" />
-                </div>
+                <svg width='100%' height='50px' className="frame">
+                    {/* <img src="frame_1.svg" alt="" /> */}
+                    <image href="frame_1.svg" width="100%" height="100%" />
+                </svg>
             </div>
         </div>
     );
