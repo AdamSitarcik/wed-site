@@ -29,6 +29,7 @@ export const Wrapper = styled.aside`
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        gap: 20px;
     }
 
     .timeline-item {
@@ -82,9 +83,13 @@ export const Wrapper = styled.aside`
         }
 
         .icon {
-            font-size: 1.5rem;
-            width: 35px;
-            height: 35px;
+            font-size: 2rem;
+            width: 40px;
+            height: 40px;
+        }
+
+        ul{
+            gap: 0;
         }
     }
 `;

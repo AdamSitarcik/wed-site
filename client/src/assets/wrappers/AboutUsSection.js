@@ -2,40 +2,31 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.aside`
     .slider-container {
+        position: absolute;
+        bottom: 0;
         display: flex;
         justify-content: center;
-        align-items: center;
-        background-color: var(--background-color-dark);
+        align-items: end;
         width: 100vw;
         height: 70vh;
-        /* max-height: calc(var(--slide-max-heigth) + 0vh); */
-        /* min-height: calc(var(--slide-min-heigth) + 0vh); */
     }
 
     .slide-container {
-        width: 70%;
-        /* max-width: var(--slide-max-width); */
-        /* min-width: var(--slide-min-heigth); */
-        /* height: var(--slide-heigth);
-        min-height: var(--slide-min-heigth);
-        max-height: var(--slide-max-heigth); */
-        height: 95%;
+        width: 40vw;
+        height: 30vw;
+        min-width: 600px;
+        min-height: 450px;
         position: relative;
-        border-radius: 20px;
     }
 
     .slide {
         position: absolute;
         width: 100%;
-        /* min-width: var(--slide-min-heigth); */
-        /* max-width: var(--slide-max-width); */
         height: 100%;
-        /* min-height: var(--slide-min-width); */
-        /* max-height: var(--slide-max-heigth); */
         background-position: center;
-        /* background-size: cover; */
+        background-size: cover;
         z-index: 2;
-        background-size: contain;
+        /* background-size: contain; */
         background-repeat: no-repeat;
     }
 
@@ -46,13 +37,15 @@ export const Wrapper = styled.aside`
     .prev-arrow-container,
     .next-arrow-container {
         position: absolute;
-        height: 100%;
-        width: 3.5vw;
+        width: 5%;
         cursor: pointer;
         z-index: 3;
         display: flex;
         justify-content: center;
         align-items: center;
+        top: 50%;
+        transform: translate(0, -50%);
+        height: 50%;
     }
 
     .prev-arrow-container {
@@ -60,7 +53,6 @@ export const Wrapper = styled.aside`
     }
 
     .next-arrow-container {
-        top: 0;
         right: 0;
     }
 
@@ -68,30 +60,14 @@ export const Wrapper = styled.aside`
     .next-arrow-container:hover,
     .prev-arrow-container:active,
     .next-arrow-container:active {
-        background-color: rgb(255, 255, 255, 0.3);
-    }
-
-    .prev-arrow-container:active,
-    .next-arrow-container:active {
-        background-color: rgb(255, 255, 255, 0.3);
-
+        background-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.3);
     }
 
     .prev-arrow,
     .next-arrow {
         color: var(--light-grey-transparent);
-        /* position: absolute; */
-        /* top: 50%; */
-        /* transform: translate(0, -50%); */
-        font-size: 5vw;
-    }
-
-    .prev-arrow {
-        left: 0.8vw;
-    }
-
-    .next-arrow {
-        right: 1vw;
+        font-size: 3rem;
     }
 
     .slide-exit {
@@ -104,36 +80,20 @@ export const Wrapper = styled.aside`
         transition-delay: 100ms;
     }
 
-    .frame {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 150px;
-        background-size: 100% 100%;
-        z-index: 4;
-        contain: strict;
-    }
-    
-    img {
-        width: 500px;
-        height: 50px;
-    }
-
-    @media (max-width: 650px) {
-        .prev-arrow,
-        .next-arrow {
-            font-size: 30px;
-        }
-    }
-
     @media (max-width: 992px) {
+        .slider-container {
+            height: 40vh;
+        }
+
         .slide-container {
             width: 100%;
+            min-width: 100%;
+            min-height: 40vh;
         }
 
-        .prev-arrow-container,
-        .next-arrow-container {
-            width: 7vw;
+        .prev-arrow,
+        .next-arrow {
+            font-size: 2rem;
         }
     }
 `;

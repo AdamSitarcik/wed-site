@@ -18,7 +18,7 @@ import {
 const initialState = {
     showSmallNavbar: false,
     sections: [
-        { id: 1, text: 'My', navigate: 'about-us' },
+        { id: 1, text: 'O nás', navigate: 'about-us' },
         { id: 2, text: 'Harmonogram', navigate: 'timeline' },
         { id: 3, text: 'Informácie', navigate: 'info' },
         { id: 4, text: 'Registrácia', navigate: 'register' },

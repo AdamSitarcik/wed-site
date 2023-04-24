@@ -8,7 +8,7 @@
     --background-color-info: rgba(250, 253, 243, 0.5);
     --background-color-light: #fafdf398;
     --background-color-light-non-transparent: #fafdf3;
-    --background-color-dark: #dadabf98;
+    --background-color-dark: rgba(218, 218, 191, 0.6);
     --background-color-dark-non-transparent: #dadabf;
     --light-grey: #f0f4f8;
     --light-grey-transparent: rgba(240, 244, 248, 0.7);
@@ -36,6 +36,7 @@
 
     --transition: 0.3s ease-in-out all;
 }
+
 
 body {
     text-align: center;

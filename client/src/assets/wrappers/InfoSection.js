@@ -12,10 +12,6 @@ export const Wrapper = styled.aside`
         box-sizing: border-box;
     }
 
-    a {
-        color: black;
-    }
-
     ul {
         height: 100%;
         list-style: none;
@@ -32,7 +28,7 @@ export const Wrapper = styled.aside`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 15px;
+        gap: 20%;
     }
 
     .item-title {
@@ -80,9 +76,6 @@ export const Wrapper = styled.aside`
 
         .info-item {
             flex-direction: column;
-            justify-content: space-between;
-            gap: 15px;
-            width: 100%;
             font-size: 1.5rem;
             padding-bottom: 25px;
         }
@@ -100,9 +93,9 @@ export const Wrapper = styled.aside`
             position: relative;
             left: 0;
             transform: none;
-            font-size: 1.5rem;
-            width: 35px;
-            height: 35px;
+            font-size: 2rem;
+            width: 40px;
+            height: 40px;
         }
 
         .item-title {

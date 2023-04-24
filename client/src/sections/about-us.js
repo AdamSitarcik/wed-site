@@ -5,7 +5,7 @@ const AboutUs = ({ className }) => {
     return (
         <Wrapper>
             <section id='about-us' className={className}>
-                <p>About us</p>
+                <h1 className="section-title">O nás</h1>
                 <ImageSlider />
             </section>
         </Wrapper>
