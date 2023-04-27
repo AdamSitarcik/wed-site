@@ -12,11 +12,11 @@ export const Wrapper = styled.aside`
     }
 
     .timeline-container::before {
-        height: 80%;
+        height: 85%;
         top: 10%;
+        left: 32.5%;
         content: '';
         position: absolute;
-        left: 32.5%;
         transform: translate(-50%, 0);
         border: 0;
         box-shadow: 0 0 2px 2px var(--blue);
@@ -77,13 +77,10 @@ export const Wrapper = styled.aside`
         }
 
         .timeline-item {
-            width: 100%;
             font-size: 1.5rem;
-            padding-bottom: 25px;
         }
 
         .icon {
-            font-size: 2rem;
             width: 40px;
             height: 40px;
         }

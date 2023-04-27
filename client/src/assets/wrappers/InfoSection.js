@@ -28,13 +28,14 @@ export const Wrapper = styled.aside`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 20%;
+        gap: 20px;
     }
 
     .item-title {
         width: 20%;
         font-size: 1.5rem;
         text-align: end;
+        font-weight: bold;
     }
 
     .item-description {
@@ -78,10 +79,12 @@ export const Wrapper = styled.aside`
             flex-direction: column;
             font-size: 1.5rem;
             padding-bottom: 25px;
+            gap: 10px;
         }
 
         .item-title {
             width: auto;
+            font-size: 1.7rem;
         }
 
         .item-description {

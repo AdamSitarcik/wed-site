@@ -91,6 +91,7 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    box-sizing: border-box;
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -98,6 +99,7 @@ button {
 
 .section-container.dark {
     background-color: var(--background-color-dark);
+    box-shadow: 0 0 10px 10px var(--background-color-dark);
 }
 
 a {

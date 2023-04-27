@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.aside`
+    position: static;
     .slider-container {
         position: absolute;
         bottom: 0;
@@ -8,14 +9,14 @@ export const Wrapper = styled.aside`
         justify-content: center;
         align-items: end;
         width: 100vw;
-        height: 70vh;
+        height: 30vh;
     }
 
     .slide-container {
-        width: 40vw;
-        height: 30vw;
-        min-width: 600px;
-        min-height: 450px;
+        min-width: 800px;
+        min-height: 400px;
+        max-height: 900px;
+        max-width: 450px;
         position: relative;
     }
 
@@ -80,20 +81,168 @@ export const Wrapper = styled.aside`
         transition-delay: 100ms;
     }
 
+    .timeline-container {
+        top: 20%;
+        height: 30vh;
+        width: 60vw;
+        min-width: 900px;
+        position: absolute;
+        background-color: var(--background-color-info);
+        box-shadow: var(--container-box-shadow);
+        border-radius: var(--container-border-radius);
+        box-sizing: border-box;
+    }
+
+    .timeline-container::before {
+        width: 80%;
+        left: 10%;
+        content: '';
+        position: absolute;
+        top: 32.5%;
+        transform: translate(0, -50%);
+        border: 0;
+        box-shadow: 0 0 2px 2px var(--blue);
+    }
+
+    ul {
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .timeline-item {
+        width: 20%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.7rem;
+        padding-right: 20px;
+    }
+
+    .description {
+        text-align: center;
+        height: 55%;
+    }
+
+    .date {
+        height: 20%;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .icon {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 32.5%;
+        transform: translate(0, -50%);
+        font-size: 2rem;
+        background-color: var(--blue);
+        box-shadow: 0 0 3px 3px var(--blue);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .fsk-logo {
+        width: 70%;
+        height: 70%;
+    }
+
     @media (max-width: 992px) {
         .slider-container {
-            height: 40vh;
+            height: 30vh;
+            width: 100vw;
         }
 
         .slide-container {
             width: 100%;
+            height: 100%;
+            max-height: 100%;
+            min-height: 100%;
+            max-width: 100%;
             min-width: 100%;
-            min-height: 40vh;
         }
 
         .prev-arrow,
         .next-arrow {
             font-size: 2rem;
         }
+
+        .timeline-container {
+            height: 45vh;
+            min-height: 300px;
+            margin-top: 15vh;
+            top: 0;
+            width: 90vw;
+            max-width: 700px;
+            min-width: 200px;
+        }
+
+        .timeline-container::before {
+            height: 85%;
+            width: 0;
+            top: 10%;
+            left: 32.5%;
+            transform: translate(-50%, 0);
+        }
+
+        ul {
+            flex-direction: column;
+            /* width: 100%;
+            height: 100%;
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px; */
+        }
+
+        .timeline-item {
+            height: 20%;
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.5rem;
+            padding-right: 0;
+            padding-bottom: 0;
+        }
+
+        .description {
+            text-align: start;
+            width: 55%;
+            height: fit-content;
+        }
+
+        .date {
+            width: 20%;
+            height: fit-content;
+            text-align: end;
+        }
+
+        .icon {
+            width: 35px;
+            height: 35px;
+            top: 50%;
+            left: 32.5%;
+            transform: translate(-50%, -50%);
+            font-size: 1.7rem;
+        }
     }
+
+    @media (max-width: 500px) {
+        .timeline-item {
+            font-size: 1.2rem;
+    }
+
 `;
