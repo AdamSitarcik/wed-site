@@ -29,7 +29,6 @@ export const Wrapper = styled.aside`
         z-index: 2;
         background-position: center;
         background-size: cover;
-        /* background-size: contain; */
         background-repeat: no-repeat;
         border-radius: 20px;
     }
@@ -85,11 +84,11 @@ export const Wrapper = styled.aside`
     }
 
     .timeline-container {
-        top: 20%;
+        top: 17%;
         height: 30vh;
         min-height: 250px;
-        width: 60vw;
-        min-width: 900px;
+        width: 70vw;
+        min-width: 950px;
         position: absolute;
         background-color: var(--background-color-info);
         box-shadow: var(--container-box-shadow);
@@ -128,7 +127,7 @@ export const Wrapper = styled.aside`
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        font-size: 1.7rem;
+        font-size: 1.8rem;
         gap: 60px;
     }
 
@@ -139,6 +138,7 @@ export const Wrapper = styled.aside`
     }
 
     .date {
+        font-size: 2rem;
         height: 15%;
         text-align: center;
         font-weight: bold;
@@ -237,9 +237,11 @@ export const Wrapper = styled.aside`
             text-align: start;
             width: 55%;
             height: fit-content;
+            font-size: 1.3rem;
         }
 
         .date {
+            font-size: 1.5rem;
             width: 20%;
             height: fit-content;
             justify-content: end;
@@ -265,6 +267,14 @@ export const Wrapper = styled.aside`
     @media (max-width: 500px) {
         .timeline-item {
             font-size: 1.2rem;
+        }
+
+        .date {
+            font-size: 1.2rem;
+        }
+
+        .description {
+            font-size: 1.1rem;
         }
     }
 `;

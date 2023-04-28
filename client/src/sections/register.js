@@ -2,12 +2,12 @@ import { RegisterForm } from '../components';
 import { Wrapper } from '../assets/wrappers/RegisterSection';
 
 const Register = ({ className }) => {
-    const showRegisterForm = false;
+    const showRegisterForm = true;
 
     return (
         <Wrapper>
             <section id='register' className={className}>
-                <div className='header'>
+                <div className='section-title'>
                     <h1>Potvrdenie účasti</h1>
                     <h3>pozvaných hostí</h3>
                 </div>

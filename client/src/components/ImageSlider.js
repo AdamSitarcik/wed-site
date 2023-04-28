@@ -10,23 +10,23 @@ const ImageSlider = () => {
 
     const slides = useMemo(() => {
         return [
-            { url: '/slider-images/img1.jpg' },
-            { url: '/slider-images/img2.jpg' },
-            { url: '/slider-images/img3.jpg' },
-            { url: '/slider-images/img4.jpg' },
-            { url: '/slider-images/img5.jpg' },
-            { url: '/slider-images/img6.jpg' },
-            { url: '/slider-images/img7.jpg' },
-            { url: '/slider-images/img8.jpg' },
-            { url: '/slider-images/img9.jpg' },
-            // { url: '/slider-images/img10.jpg' },
-            { url: '/slider-images/img11.jpg' },
-            { url: '/slider-images/img12.jpg' },
-            { url: '/slider-images/img13.jpg' },
-            { url: '/slider-images/img14.jpg' },
-            { url: '/slider-images/img15.jpg' },
-            { url: '/slider-images/img16.jpg' },
-            { url: '/slider-images/img17.jpg' },
+            { url: '/img1.jpg' },
+            { url: '/img2.jpg' },
+            { url: '/img3.jpg' },
+            { url: '/img4.jpg' },
+            { url: '/img5.jpg' },
+            { url: '/img6.jpg' },
+            { url: '/img7.jpg' },
+            { url: '/img8.jpg' },
+            { url: '/img9.jpg' },
+            // { url: '/img10.jpg' },
+            { url: '/img11.jpg' },
+            { url: '/img12.jpg' },
+            { url: '/img13.jpg' },
+            { url: '/img14.jpg' },
+            { url: '/img15.jpg' },
+            { url: '/img16.jpg' },
+            { url: '/img17.jpg' },
         ];
     }, []);
 
@@ -120,7 +120,7 @@ const ImageSlider = () => {
                     <div
                         className="slide"
                         style={{
-                            backgroundImage: `url(${slides[currentIndex].url})`,
+                            backgroundImage: `url(/slider-images/reduced_size${slides[currentIndex].url})`,
                         }}
                     ></div>
                 </CSSTransition>
@@ -129,7 +129,7 @@ const ImageSlider = () => {
                     <div
                         className="slide secondary"
                         style={{
-                            backgroundImage: `url(${
+                            backgroundImage: `url(/slider-images/reduced_size${
                                 slides[
                                     nextSlide
                                         ? nextSlideIndex()

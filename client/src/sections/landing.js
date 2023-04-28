@@ -21,17 +21,26 @@ const Landing = ({ className }) => {
                     <BigNavbar />
                     <SmallNavbar />
                 </header>
-                <div className={showFrame ? 'show-frame info-container' : 'info-container'}>
+                <div
+                    className={
+                        showFrame
+                            ? 'show-frame info-container'
+                            : 'info-container'
+                    }
+                >
                     <h2>27.5.2023 o 14:30</h2>
                     <div className="name-container">
                         <h1>Diana</h1>
                         <AiFillHeart className="react-icon heart-icon" />
                         <h1>Adam</h1>
                     </div>
-                    <h2>
-                        Veľký evanjelický kostol v Bratislave{' '}
-                        <MapSymbol href="https://goo.gl/maps/kBfbPf4MD7F6x2aM8" />
-                    </h2>
+                    <h3>
+                        <span>Veľký evanjelický kostol</span>
+                        <span>
+                            v Bratislave{' '}
+                            <MapSymbol href="https://goo.gl/maps/kBfbPf4MD7F6x2aM8" />
+                        </span>
+                    </h3>
                 </div>
                 <Countdown />
                 <ScrollButton whereTo={sections[0].navigate} />

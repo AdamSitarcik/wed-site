@@ -1,20 +1,10 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.aside`
-    h1 {
-        font-size: clamp(3rem, 5rem, 5rem);
-    }
-    h2 {
-        font-size: 3.5rem;
-    }
-
-    h1,
-    h2 {
-        font-family: var(--allura);
-        margin: 0;
-    }
-
     .info-container {
+        height: 60vh;
+        min-height: 250px;
+        width: 650px;
         position: absolute;
         top: 45%;
         left: 50%;
@@ -25,14 +15,16 @@ export const Wrapper = styled.aside`
         justify-content: space-between;
         border-radius: var(--container-border-radius);
         transition: all 0.3s ease-in-out;
-        height: 60vh;
         padding: 20px;
-        width: 650px;
     }
 
     .show-frame {
         box-shadow: 0 0 10px 10px var(--background-color-dark);
         background-color: var(--background-color-info);
+    }
+
+    h3 span {
+        display: block;
     }
 
     .name-container {
@@ -43,9 +35,9 @@ export const Wrapper = styled.aside`
         align-items: center;
     }
 
-
     @media (max-width: 992px) {
         .info-container {
+            max-height: 500px;
             width: clamp(
                 var(--bckg-img-min-width),
                 82vw,
@@ -53,12 +45,9 @@ export const Wrapper = styled.aside`
             );
         }
 
-        h1 {
-            font-size: clamp(3rem, 10vw, 5rem);
-        }
-
-        h2 {
-            font-size: clamp(2.45rem, 6vw, 3.5rem);
+        .name-container {
+            box-sizing: border-box;
+            padding: 20px 0;
         }
     }
 
@@ -69,13 +58,17 @@ export const Wrapper = styled.aside`
             gap: 25px;
         }
 
-        h1 {
+        /* h1 {
             font-size: 7vh;
         }
 
         h2 {
             font-size: 5vh;
         }
+
+        h3 {
+            font-size: 4vh;
+        } */
 
         .info-container {
             height: 50vh;

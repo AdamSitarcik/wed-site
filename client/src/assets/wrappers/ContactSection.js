@@ -25,7 +25,7 @@ export const Wrapper = styled.aside`
         display: flex;
         flex-direction: column;
         justify-content: center;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 
     .right {
@@ -37,7 +37,7 @@ export const Wrapper = styled.aside`
     }
 
     .adress-container {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -84,6 +84,7 @@ export const Wrapper = styled.aside`
 
         .contact {
             font-size: 1.3rem;
+            gap: 5px;
         }
     }
 `;

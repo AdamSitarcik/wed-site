@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.aside`
     .info-container {
         margin-top: 20vh;
-        margin-bottom: 5vh;
+        margin-bottom: 10vh;
         width: 70vw;
         position: relative;
         background-color: var(--background-color-info);
@@ -34,7 +34,7 @@ export const Wrapper = styled.aside`
 
     .item-title {
         width: 20%;
-        font-size: 1.5rem;
+        font-size: 2rem;
         text-align: end;
         font-weight: bold;
     }
@@ -44,7 +44,7 @@ export const Wrapper = styled.aside`
         flex-direction: column;
         gap: 20px;
         text-align: start;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         width: 55%;
     }
 

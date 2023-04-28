@@ -5,10 +5,10 @@
     --im-fell-english: 'IM Fell English', serif;
     --im-fell-english-sc: 'IM Fell English SC', serif;
 
-    --background-color-info: rgba(250, 253, 243, 0.5);
-    --background-color-light: #fafdf398;
+    --background-color-info: rgba(250, 253, 243, 0.4);
+    --background-color-light: hsla(78, 71%, 97%, 0.7);
     --background-color-light-non-transparent: #fafdf3;
-    --background-color-dark: rgba(218, 218, 191, 0.6);
+    --background-color-dark: rgba(218, 218, 191, 0.5);
     --background-color-dark-non-transparent: #dadabf;
     --light-grey: #f0f4f8;
     --light-grey-transparent: rgba(240, 244, 248, 0.7);
@@ -24,12 +24,6 @@
     --navbar-height: 7vh;
     --bckg-img-max-width: 650px;
     --bckg-img-min-width: 250px;
-    --slide-width: 70vw;
-    --slide-max-width: 800px;
-    --slide-min-width: 200px;
-    --slide-heigth: calc(var(--slide-width) * 9 / 16);
-    --slide-max-heigth: calc(var(--slide-max-width) * 9 / 16);
-    --slide-min-heigth: 300px;
 
     --container-border-radius: 25px;
     --container-box-shadow: 0 0 20px 20px var(--background-color-info);
@@ -61,12 +55,26 @@ h4,
 h5,
 h6 {
     z-index: 1;
+    margin: 0;
+    font-family: var(--allura);
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+h3 {
+    font-size: 2.5rem;
 }
 
 button {
     border: none;
     cursor: pointer;
-    font-family: var(--im-fell-english);
+    font-family: var(--im-fell-dw-pica);
     font-size: 1.2rem;
     border-radius: 10px;
     width: 100%;
@@ -74,7 +82,7 @@ button {
 
 .react-icon {
     color: black;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .heart-icon {
@@ -101,9 +109,9 @@ button {
     position: absolute;
     z-index: 1;
     content: '';
-    height: 90%;
+    height: 95%;
     width: 100vw;
-    top: 5vh;
+    top: 2.5vh;
     background-color: var(--background-color-dark);
     box-shadow: 0px 0px 5vh 5vh var(--background-color-dark);
 }
@@ -126,27 +134,39 @@ a:hover {
     width: 80vw;
     position: absolute;
     left: 50%;
-    top: 5%;
+    top: 3%;
     transform: translate(-50%, 0);
-    font-size: 4rem;
     margin: 0;
+}
+
+.nav-links {
+    font-size: 2rem;
 }
 
 @media (max-width: 992px) {
     body {
-        background-size: clamp(
-            var(--bckg-img-min-width),
-            82vw,
-            var(--bckg-img-max-width)
-        );
+        background-size: clamp(var(--bckg-img-min-width),
+                82vw,
+                var(--bckg-img-max-width));
     }
 
     .heart-icon {
         font-size: clamp(2.45rem, 15vw, 5rem);
     }
 
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
     .section-title {
         top: 3vh;
-        font-size: 2.5rem;
     }
 }

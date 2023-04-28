@@ -119,7 +119,7 @@ export const Wrapper = styled.aside`
         outline: none;
     }
 
-    .header {
+    /* .header {
         font-family: var(--allura);
         width: 80vw;
         height: 10%;
@@ -128,17 +128,7 @@ export const Wrapper = styled.aside`
         top: 5%;
         transform: translate(-50%, 0);
         margin: 0;
-    }
-
-    .header h1 {
-        font-size: 4rem;
-        margin: 0;
-    }
-
-    .header h3 {
-        font-size: 2.5rem;
-        margin: 0;
-    }
+    } */
 
     .no-form-container {
         position: absolute;
@@ -161,12 +151,12 @@ export const Wrapper = styled.aside`
             max-width: 100%;
         }
 
-        .header h1 {
+        /* .header h1 {
             font-size: 2.5rem;
         }
 
         .header h3 {
             font-size: 1.6rem;
-        }
+        } */
     }
 `;

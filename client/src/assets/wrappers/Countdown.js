@@ -21,23 +21,20 @@ export const Wrapper = styled.aside`
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
     }
 
     .countdown-value {
         font-size: 2rem;
     }
     .countdown-unit {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
     @media (max-width: 992px) {
         .countdown-container {
             width: 70vw;
             max-width: 400px;
-        }
-        .countdown-item{
-            gap: 5px;
         }
 
         .countdown-value {

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.aside`
     .timeline-container {
         top: 5%;
-        width: 40vw;
+        width: 50vw;
         position: absolute;
         top: 55%;
         transform: translate(0, -50%);
@@ -40,7 +40,7 @@ export const Wrapper = styled.aside`
         justify-content: space-between;
         align-items: center;
         padding-bottom: 25px;
-        font-size: 1.7rem;
+        font-size: 2rem;
         height: 7vh;
     }
 

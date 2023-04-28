@@ -1,5 +1,5 @@
 import { FiMail, FiPhone, FiFacebook } from 'react-icons/fi';
-import {BsFacebook} from 'react-icons/bs'
+import { BsFacebook } from 'react-icons/bs';
 
 const ContactInfo = ({ name, phone, email, align, facebook }) => {
     return (
@@ -12,7 +12,7 @@ const ContactInfo = ({ name, phone, email, align, facebook }) => {
                 <FiMail /> {email}
             </div>
             <div>
-                <a href={facebook}>
+                <a href={facebook} target="_blank" rel="noopener noreferrer">
                     <BsFacebook />
                 </a>
             </div>
