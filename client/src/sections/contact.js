@@ -1,8 +1,6 @@
 import { ContactInfo } from '../components';
 import { AiFillHeart, AiOutlineHome } from 'react-icons/ai';
-import { FaMapMarkerAlt } from 'react-icons/fa';
 import { Wrapper } from '../assets/wrappers/ContactSection';
-import MapSymbol from '../components/MapSymbol';
 
 const Contact = ({ className }) => {
     return (
@@ -27,8 +25,8 @@ const Contact = ({ className }) => {
                             facebook="https://www.facebook.com/adam.sitarcik.3/"
                         />
                     </div>
+                    <div className="divider"></div>
                     <div className="adress-container">
-                        <div className="divider"></div>
                         <div className="address">
                             <AiOutlineHome />{' '}
                             <a href="https://goo.gl/maps/QJb9vaPZo6kR74PK6">

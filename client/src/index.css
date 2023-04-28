@@ -95,11 +95,12 @@ button {
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    min-width: 300px;
 }
 
 .section-container.dark {
     background-color: var(--background-color-dark);
-    box-shadow: 0 0 10px 10px var(--background-color-dark);
+    /* box-shadow: 0 20px 150px 150px var(--background-color-dark); */
 }
 
 a {

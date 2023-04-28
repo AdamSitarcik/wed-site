@@ -9,6 +9,7 @@ export const Wrapper = styled.aside`
         box-shadow: var(--container-box-shadow);
         background-color: var(--background-color-info);
         border-radius: var(--container-border-radius);
+        min-height: 350px;
     }
 
     .contacts-container {
@@ -53,11 +54,16 @@ export const Wrapper = styled.aside`
     }
 
     @media (max-width: 992px) {
+        .container {
+            justify-content: space-between;
+            gap: 20px;
+        }
+
         .contacts-container {
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            height: 50vh;
+            height: fit-content;
             padding: 0;
             gap: 0;
         }
@@ -69,11 +75,9 @@ export const Wrapper = styled.aside`
 
         .divider {
             display: block;
-            height: 1px;
             width: 80%;
             background-color: var(--background-color-dark-non-transparent);
-            border-radius: 15px;
-            box-shadow: 0 0 1px 1px var(--background-color-dark-non-transparent);
+            box-shadow: 0 0 2px 2px var(--background-color-dark-non-transparent);
         }
 
         .contact {

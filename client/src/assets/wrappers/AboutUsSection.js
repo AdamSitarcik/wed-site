@@ -9,14 +9,15 @@ export const Wrapper = styled.aside`
         justify-content: center;
         align-items: end;
         width: 100vw;
-        height: 30vh;
+        height: 40vh;
+        min-height: 150px;
     }
 
     .slide-container {
-        min-width: 800px;
-        min-height: 400px;
-        max-height: 900px;
-        max-width: 450px;
+        width: 80vh;
+        max-width: 800px;
+        height: 100%;
+        max-height: 400px;
         position: relative;
     }
 
@@ -24,11 +25,12 @@ export const Wrapper = styled.aside`
         position: absolute;
         width: 100%;
         height: 100%;
+        z-index: 2;
         background-position: center;
         background-size: cover;
-        z-index: 2;
         /* background-size: contain; */
         background-repeat: no-repeat;
+        border-radius: 20px;
     }
 
     .secondary {
@@ -84,6 +86,7 @@ export const Wrapper = styled.aside`
     .timeline-container {
         top: 20%;
         height: 30vh;
+        min-height: 250px;
         width: 60vw;
         min-width: 900px;
         position: absolute;
@@ -109,6 +112,7 @@ export const Wrapper = styled.aside`
         height: 100%;
         list-style: none;
         padding: 0;
+        margin: 0;
         display: flex;
         justify-content: space-between;
         gap: 20px;
@@ -123,18 +127,22 @@ export const Wrapper = styled.aside`
         justify-content: space-between;
         align-items: center;
         font-size: 1.7rem;
-        padding-right: 20px;
+        gap: 60px;
     }
 
     .description {
         text-align: center;
-        height: 55%;
+        height: 50%;
+        padding-top: 10px;
     }
 
     .date {
-        height: 20%;
+        height: 15%;
         text-align: center;
         font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: end;
     }
 
     .icon {
@@ -160,17 +168,16 @@ export const Wrapper = styled.aside`
 
     @media (max-width: 992px) {
         .slider-container {
-            height: 30vh;
+            height: 50vw;
+            max-height: 250px;
             width: 100vw;
         }
 
         .slide-container {
             width: 100%;
             height: 100%;
-            max-height: 100%;
-            min-height: 100%;
-            max-width: 100%;
-            min-width: 100%;
+
+            max-width: 800px;
         }
 
         .prev-arrow,
@@ -198,13 +205,7 @@ export const Wrapper = styled.aside`
 
         ul {
             flex-direction: column;
-            /* width: 100%;
-            height: 100%;
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: space-between;
-            gap: 20px; */
+            gap: 10px;
         }
 
         .timeline-item {
@@ -227,7 +228,8 @@ export const Wrapper = styled.aside`
         .date {
             width: 20%;
             height: fit-content;
-            text-align: end;
+            justify-content: end;
+            align-items: center;
         }
 
         .icon {
@@ -238,11 +240,19 @@ export const Wrapper = styled.aside`
             transform: translate(-50%, -50%);
             font-size: 1.7rem;
         }
+
+    @media (min-height: 800px) {
+        .slide-container {
+            bottom: 7vh;
+        }
+    }
+
     }
 
     @media (max-width: 500px) {
         .timeline-item {
             font-size: 1.2rem;
+        }
     }
 
 `;

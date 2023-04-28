@@ -18,8 +18,8 @@ const ImageSlider = () => {
             { url: '/slider-images/img6.jpg' },
             { url: '/slider-images/img7.jpg' },
             { url: '/slider-images/img8.jpg' },
-            { url: '/slider-images/img9.jpg' },
-            { url: '/slider-images/img10.jpg' },
+            // { url: '/slider-images/img9.jpg' },
+            // { url: '/slider-images/img10.jpg' },
             { url: '/slider-images/img11.jpg' },
         ];
     }, []);

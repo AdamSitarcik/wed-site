@@ -14,7 +14,9 @@ const AboutUs = ({ className }) => {
                     <ul>
                         <li className='timeline-item'>
                             <div className='date'>2002</div>
-                            <div className='icon'></div>
+                            <div className='icon'>
+                                <img src="DFS-Lucka-logo.svg" alt="" className='fsk-logo' />
+                            </div>
                             <div className='description'>
                                 Prvé stretnutie v DFS Lúčka{' '}
                             </div>
