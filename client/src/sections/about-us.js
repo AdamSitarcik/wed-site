@@ -8,6 +8,7 @@ const AboutUs = ({ className }) => {
     return (
         <Wrapper>
             <section id='about-us' className={className}>
+                <div className='dark-bckg-container'></div>
                 <h1 className='section-title'>O nás</h1>
 
                 <div className='timeline-container'>

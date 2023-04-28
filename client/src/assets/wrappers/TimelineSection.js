@@ -4,7 +4,9 @@ export const Wrapper = styled.aside`
     .timeline-container {
         top: 5%;
         width: 40vw;
-        position: relative;
+        position: absolute;
+        top: 55%;
+        transform: translate(0, -50%);
         background-color: var(--background-color-info);
         box-shadow: var(--container-box-shadow);
         border-radius: var(--container-border-radius);
@@ -12,7 +14,7 @@ export const Wrapper = styled.aside`
     }
 
     .timeline-container::before {
-        height: 85%;
+        height: 80%;
         top: 10%;
         left: 32.5%;
         content: '';
@@ -66,14 +68,19 @@ export const Wrapper = styled.aside`
     .time {
         width: 20%;
         text-align: end;
+        font-weight: bold;
     }
 
     @media (max-width: 992px) {
         .timeline-container {
-            margin-top: 15vh;
             height: 70vh;
+            max-height: 550px;
             width: 90%;
             max-width: 700px;
+        }
+
+        .timeline-container::before {
+        height: 85%;
         }
 
         .timeline-item {

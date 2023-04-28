@@ -10,25 +10,26 @@ import { InfoItem } from '../components';
 const Info = ({ className }) => {
     return (
         <Wrapper>
-            <section id="info" className={className}>
-                <h1 className="section-title">Ďalšie info</h1>
-                <div className="info-container">
+            <section id='info' className={className}>
+                <div className='dark-bckg-container'></div>
+                <h1 className='section-title'>Ďalšie info</h1>
+                <div className='info-container'>
                     <ul>
                         <InfoItem
-                            title="Miesto"
+                            title='Miesto'
                             icon={<BsPinMap />}
                             description={
-                                <div className="item-description">
+                                <div className='item-description'>
                                     <div>
                                         Obrad -{' '}
-                                        <a href="https://goo.gl/maps/Vup4UWcADFgqqyZV8">
+                                        <a href='https://goo.gl/maps/Vup4UWcADFgqqyZV8'>
                                             Veľký evanjelický kostol, Konventná
                                             14, 811 03 Bratislava
                                         </a>
                                     </div>
                                     <div>
                                         Večera -{' '}
-                                        <a href="https://goo.gl/maps/22Ey4DAtQBNvx3sh8">
+                                        <a href='https://goo.gl/maps/22Ey4DAtQBNvx3sh8'>
                                             Dom Kultúry Vajnory, Pod lipami
                                             10036/2, 831 07 Vajnory
                                         </a>
@@ -37,10 +38,10 @@ const Info = ({ className }) => {
                             }
                         />
                         <InfoItem
-                            title="Dary"
+                            title='Dary'
                             icon={<AiOutlineGift />}
                             description={
-                                <div className="item-description">
+                                <div className='item-description'>
                                     Máme všetky paplóny, hrnce a dokonca aj
                                     príbory. Viac nás poteší, ak prispejete
                                     finančne, na naše cestovanie či iné zážitky
@@ -49,25 +50,25 @@ const Info = ({ className }) => {
                             }
                         />
                         <InfoItem
-                            title="Kvety"
+                            title='Kvety'
                             icon={<BsFlower3 />}
                             description={
-                                <div className="item-description">
+                                <div className='item-description'>
                                     {' '}
-                                    Chceme byť eko, tak prosíme bez kvetov 😉. Ak to
-                                    ale inak nejde, tak v budúcnosti po svadbe
-                                    nám radšej kúpte kyticu, ktorej sa potešíme
-                                    naplno.
+                                    Chceme byť eko, tak prosíme bez kvetov 😉.
+                                    Ak to ale inak nejde, tak v budúcnosti po
+                                    svadbe nám radšej kúpte kyticu, ktorej sa
+                                    potešíme naplno.
                                 </div>
                             }
                         />
                         <InfoItem
-                            title="Parkovanie"
+                            title='Parkovanie'
                             icon={<CiParking1 />}
                             description={
-                                <div className="item-description">
+                                <div className='item-description'>
                                     <div>
-                                        <a href="https://goo.gl/maps/fxL3gzu2JAmHhhAi6">
+                                        <a href='https://goo.gl/maps/fxL3gzu2JAmHhhAi6'>
                                             Parkovisko pri kostole
                                         </a>
                                     </div>
@@ -76,10 +77,10 @@ const Info = ({ className }) => {
                             }
                         />
                         <InfoItem
-                            title="Doprava"
+                            title='Doprava'
                             icon={<MdOutlineEmojiTransportation />}
                             description={
-                                <div className="item-description">
+                                <div className='item-description'>
                                     <div>
                                         Na odvoz od kostola bude zabezpečený
                                         autobus
@@ -95,11 +96,11 @@ const Info = ({ className }) => {
                             }
                         />
                         <InfoItem
-                            title="Ubytovanie"
+                            title='Ubytovanie'
                             icon={<BiHotel />}
                             description={
-                                <div className="item-description">
-                                    <Link to="contact" smooth={true}>
+                                <div className='item-description'>
+                                    <Link to='contact' smooth={true}>
                                         Ak je potrebné, dajte nám vedieť 🙂
                                     </Link>
                                 </div>

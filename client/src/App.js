@@ -18,11 +18,11 @@ function App() {
         <div>
             <div className='sections'>
                 <Landing className='section-container landing-section' />
-                <AboutUs className='section-container dark' />
+                <AboutUs className='section-container' />
                 <Timeline className='section-container' />
-                <Info className='section-container dark' />
+                <Info className='section-container' />
                 <Register className='section-container' />
-                <Contact className='section-container dark' />
+                <Contact className='section-container' />
             </div>
         </div>
     );

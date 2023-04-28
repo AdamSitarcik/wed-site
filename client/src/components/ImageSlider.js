@@ -18,9 +18,15 @@ const ImageSlider = () => {
             { url: '/slider-images/img6.jpg' },
             { url: '/slider-images/img7.jpg' },
             { url: '/slider-images/img8.jpg' },
-            // { url: '/slider-images/img9.jpg' },
+            { url: '/slider-images/img9.jpg' },
             // { url: '/slider-images/img10.jpg' },
             { url: '/slider-images/img11.jpg' },
+            { url: '/slider-images/img12.jpg' },
+            { url: '/slider-images/img13.jpg' },
+            { url: '/slider-images/img14.jpg' },
+            { url: '/slider-images/img15.jpg' },
+            { url: '/slider-images/img16.jpg' },
+            { url: '/slider-images/img17.jpg' },
         ];
     }, []);
 

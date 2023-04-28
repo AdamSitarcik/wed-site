@@ -128,7 +128,6 @@ export const Wrapper = styled.aside`
         top: 5%;
         transform: translate(-50%, 0);
         margin: 0;
-        
     }
 
     .header h1 {
@@ -141,11 +140,12 @@ export const Wrapper = styled.aside`
         margin: 0;
     }
 
-    .no-form-container  {
+    .no-form-container {
         position: absolute;
         top: 50%;
         transform: translate(0, -50%);
         width: 70%;
+        max-width: 500px;
         font-size: 1.5rem;
         background-color: var(--background-color-info);
         padding: 25px 0;

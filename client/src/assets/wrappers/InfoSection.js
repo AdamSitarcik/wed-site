@@ -10,6 +10,7 @@ export const Wrapper = styled.aside`
         box-shadow: var(--container-box-shadow);
         border-radius: var(--container-border-radius);
         box-sizing: border-box;
+        z-index: 2;
     }
 
     ul {
@@ -77,7 +78,6 @@ export const Wrapper = styled.aside`
 
         .info-item {
             flex-direction: column;
-            font-size: 1.5rem;
             padding-bottom: 25px;
             gap: 10px;
         }
@@ -103,6 +103,17 @@ export const Wrapper = styled.aside`
 
         .item-title {
             text-align: center;
+        }
+    }
+
+    @media (max-width: 450px) {
+        .item-description {
+            font-size: 1.3rem;
+        }
+
+        .item-title {
+            width: auto;
+            font-size: 1.5rem;
         }
     }
 `;

@@ -37,7 +37,6 @@
     --transition: 0.3s ease-in-out all;
 }
 
-
 body {
     text-align: center;
     width: 100vw;
@@ -98,9 +97,15 @@ button {
     min-width: 300px;
 }
 
-.section-container.dark {
+.dark-bckg-container {
+    position: absolute;
+    z-index: 1;
+    content: '';
+    height: 90%;
+    width: 100vw;
+    top: 5vh;
     background-color: var(--background-color-dark);
-    /* box-shadow: 0 20px 150px 150px var(--background-color-dark); */
+    box-shadow: 0px 0px 5vh 5vh var(--background-color-dark);
 }
 
 a {
@@ -129,9 +134,11 @@ a:hover {
 
 @media (max-width: 992px) {
     body {
-        background-size: clamp(var(--bckg-img-min-width),
-                82vw,
-                var(--bckg-img-max-width));
+        background-size: clamp(
+            var(--bckg-img-min-width),
+            82vw,
+            var(--bckg-img-max-width)
+        );
     }
 
     .heart-icon {
@@ -142,5 +149,4 @@ a:hover {
         top: 3vh;
         font-size: 2.5rem;
     }
-
 }

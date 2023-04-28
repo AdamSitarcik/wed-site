@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.aside`
     .container {
+        z-index: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -77,7 +78,8 @@ export const Wrapper = styled.aside`
             display: block;
             width: 80%;
             background-color: var(--background-color-dark-non-transparent);
-            box-shadow: 0 0 2px 2px var(--background-color-dark-non-transparent);
+            box-shadow: 0 0 1.5px 1.5px
+                var(--background-color-dark-non-transparent);
         }
 
         .contact {
