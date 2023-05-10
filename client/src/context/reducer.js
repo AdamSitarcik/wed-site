@@ -10,6 +10,7 @@ import {
     HANDLE_CHANGE_OTHERS,
     ADD_OTHER_GUEST,
     DELETE_OTHER_GUEST,
+    HANDLE_CHECKBOX_CHANGE,
 } from './actions';
 
 const reducer = (state, action) => {
@@ -37,6 +38,8 @@ const reducer = (state, action) => {
                 message: '',
                 otherGuestNames: [],
                 otherGuestNumber: 0,
+                afterDinner: false,
+                busRequest: false,
             };
             return { ...state, ...initialState };
 
@@ -45,6 +48,9 @@ const reducer = (state, action) => {
 
         case HANDLE_CHANGE_OTHERS:
             return { ...state, otherGuestNames: [...action.payload.guests] };
+
+        case HANDLE_CHECKBOX_CHANGE:
+            return { ...state, [action.payload.name]: action.payload.checked };
 
         case BEGIN_REGISTER_USER:
             return { ...state, isLoading: true };

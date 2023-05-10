@@ -13,6 +13,7 @@ import MapSymbol from './MapSymbol.js';
 import OtherGuest from './OtherGuest.js';
 import InfoItem from './InfoItem.js';
 import Countdown from './Countdown.js';
+import FormCheckbox from './FormCheckbox.js';
 
 export {
     BigNavbar,
@@ -30,4 +31,5 @@ export {
     OtherGuest,
     InfoItem,
     Countdown,
+    FormCheckbox,
 };

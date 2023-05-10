@@ -130,6 +130,17 @@ export const Wrapper = styled.aside`
         margin: 0;
     } */
 
+    .checkbox-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        font-size: 1.2rem;
+    }
+
+    input[type=checkbox] {
+        transform: scale(1.8);
+    }
+
     .no-form-container {
         position: absolute;
         top: 50%;

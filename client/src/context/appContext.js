@@ -13,6 +13,7 @@ import {
     HANDLE_CHANGE_OTHERS,
     ADD_OTHER_GUEST,
     DELETE_OTHER_GUEST,
+    HANDLE_CHECKBOX_CHANGE,
 } from './actions';
 
 const initialState = {
@@ -33,6 +34,8 @@ const initialState = {
     message: '',
     otherGuestNames: [],
     otherGuestNumber: 0,
+    afterDinner: false,
+    busRequest: false,
 };
 
 const AppContext = createContext(initialState);
@@ -68,6 +71,10 @@ const AppProvider = ({ children }) => {
             type: HANDLE_CHANGE_OTHERS,
             payload: { guests },
         });
+    };
+
+    const handleCheckboxChange = ({ name, checked }) => {
+        dispatch({ type: HANDLE_CHECKBOX_CHANGE, payload: { name, checked } });
     };
 
     const addOtherGuest = () => {
@@ -114,6 +121,7 @@ const AppProvider = ({ children }) => {
                 addOtherGuest,
                 deleteOtherGuest,
                 handleChangeOthers,
+                handleCheckboxChange,
             }}
         >
             {children}

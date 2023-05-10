@@ -27,6 +27,8 @@ const GuestSchema = new mongoose.Schema({
         min: 0,
         max: 7,
     },
+    afterDinner: { type: Boolean },
+    busRequest: { type: Boolean },
 });
 
 export default mongoose.model('Guest', GuestSchema);
